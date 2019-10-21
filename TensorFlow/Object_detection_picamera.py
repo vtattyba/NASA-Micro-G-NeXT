@@ -1,6 +1,11 @@
 ######## Picamera Object Detection Using Tensorflow Classifier #########
 #
-# Author: Vladimir Tattybayev 
+
+## Initial Author: Evan Juras
+## His source is at
+## https://github.com/EdjeElectronics/TensorFlow-Object-Detection-on-the-Raspberry-Pi
+
+# Editiing Author: Vladimir Tattybayev 
 # Date: 10/20/2019
 # Description: This code uses Tensor Flow for object detection. 
 # Initial code is being used to keep Camera's field of view centered.
@@ -8,9 +13,7 @@
 # relative position of person to camera.  
 
 
-## Initial Author: Evan Juras
-## His source is at
-## https://github.com/EdjeElectronics/TensorFlow-Object-Detection-on-the-Raspberry-Pi
+
 
 ## Some of the code is copied from Google's example at
 ## https://github.com/tensorflow/models/blob/master/research/object_detection/object_detection_tutorial.ipynb
