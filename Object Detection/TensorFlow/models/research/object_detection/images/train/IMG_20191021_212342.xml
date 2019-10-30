@@ -1,0 +1,26 @@
+<annotation>
+	<folder>undrawn</folder>
+	<filename>IMG_20191021_212342.jpg</filename>
+	<path>C:\Users\Mark\Desktop\Chapstick\undrawn\IMG_20191021_212342.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>960</width>
+		<height>960</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>chapstick</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>223</xmin>
+			<ymin>335</ymin>
+			<xmax>653</xmax>
+			<ymax>721</ymax>
+		</bndbox>
+	</object>
+</annotation>
