@@ -1,3 +1,3 @@
 # University-at-Buffalo-Micro-g-NExT-Team-
 
-Updates Coming 
+Read me with instructions and updates coming soon. 
