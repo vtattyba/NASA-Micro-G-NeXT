@@ -1,3 +1,3 @@
 # AMSAR (Autonomous Maritime Search and Rescue)
 
-Read me with instructions and updates coming soon. 
+AMSAR_Initial_Proposal.pdf contains entire project overview. 
