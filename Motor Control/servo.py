@@ -11,6 +11,18 @@ p.start(0) # Initialization
 R = False
 L = False
 c = False
+
+
+def left_turn():
+    serv(1,9)
+
+def right_turn():
+    serv(1,3)
+
+def center():
+    serv(1,6)
+
+
 def servo(sleep,cycle):
     p.ChangeDutyCycle(cycle)
     time.sleep(sleep)
