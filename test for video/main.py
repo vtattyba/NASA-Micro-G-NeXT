@@ -1,12 +1,12 @@
 import subprocess
 import sys
-import servo
+import os
 import acceleromter as accl
 import time
 
 
 print("Starting System")
-time.sleep(2)
+time.sleep(1)
 print("Initializing accelerometer")
 ok = accl.accel()
 
@@ -17,10 +17,10 @@ if ok == 1:
     while True:
         ask = input("You are the SDR Give directions (l or r) \n")
         if ask == 'l':
-            servo.left()
+            os.System("python3 servo_left.py")
         elif ask == 'r':
-            servo.right()
+            os.System("python3 servo_right.py")
         else:
-            servo.straight()
+            os.System("python3 servo_straight.py")
             break
 

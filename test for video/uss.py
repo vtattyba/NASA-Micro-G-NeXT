@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO
 import time
+import os
 
 countL = 0
 countR = 0
@@ -24,30 +25,20 @@ def uss(PIN_TRIGGER, PIN_ECHO):
     distance = round(pulse_duration * 17150, 2)
     return distance
 
-
-def servo(sleep, cycle):
-    p.ChangeDutyCycle(cycle)
-    time.sleep(sleep)
-    return
-
-
-GPIO.setup(7, GPIO.OUT)
-GPIO.setup(11, GPIO.IN)
-GPIO.setup(18, GPIO.OUT)
-GPIO.setup(16, GPIO.IN)
-servoPIN = 13
-GPIO.setup(servoPIN, GPIO.OUT)
-p = GPIO.PWM(servoPIN, 50)  # GPIO 17 for PWM with 50Hz
-p.start(0)  # Initialization
-R = False
-L = False
-c = False
+trig1 = 29
+echo1 = 31
+trig2 = 40
+echo2 = 38
+GPIO.setup(trig1, GPIO.OUT)
+GPIO.setup(echo1, GPIO.IN)
+GPIO.setup(trig2, GPIO.OUT)
+GPIO.setup(echo2, GPIO.IN)
 
 try:
     while tg:
 
-        d1 = uss(7, 11)
-        d2 = uss(18, 16)
+        d1 = uss(trig1, echo1)
+        d2 = uss(trig2, echo2)
 
         print("LEFT - " + str(d1) + "    " + "RIGHT - " + str(d2))
 
@@ -59,18 +50,17 @@ try:
             countL = 0
             countR = 0
             if c == False:
-                servo(1, 6)
+                os.System("python3 servo_straight.py")
             c = True
 
         if countL >= 5:
-            servo(1, 9)
+            os.System("python3 servo_left.py")
             c = False
 
         if countR >= 5:
-            servo(1, 3)
+            os.System("python3 servo_right.py")
             c = False
 
 
 except KeyboardInterrupt:
-    p.stop()
     GPIO.cleanup()
