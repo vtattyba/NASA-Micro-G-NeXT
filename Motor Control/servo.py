@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 GPIO.setwarnings(False)
-servoPIN = 13
+servoPIN = 37
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(servoPIN, GPIO.OUT)
 
@@ -46,6 +46,7 @@ try:
            
         if move == 'c':
             servo(1,6)
+            p.stop()
           
             
             
