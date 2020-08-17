@@ -16,6 +16,6 @@ def servo(sleep, cycle):
 
 
 #print("servo left")
-servo(1, 9)
+servo(1, 4.5)
 p.stop()
 GPIO.cleanup()

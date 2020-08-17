@@ -8,7 +8,7 @@ import time
 print("Starting System")
 time.sleep(1)
 print("Initializing accelerometer")
-ok = accl.accel()
+ok = 1
 
 if ok == 1:
     print("Initializing USS")
@@ -17,10 +17,10 @@ if ok == 1:
     while True:
         ask = input("You are the SDR Give directions (l or r) \n")
         if ask == 'l':
-            os.System("python3 servo_left.py")
+            os.system("python3 servo_left.py")
         elif ask == 'r':
-            os.System("python3 servo_right.py")
+            os.system("python3 servo_right.py")
         else:
-            os.System("python3 servo_straight.py")
+            os.system("python3 servo_straight.py")
             break
 

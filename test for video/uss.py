@@ -25,10 +25,11 @@ def uss(PIN_TRIGGER, PIN_ECHO):
     distance = round(pulse_duration * 17150, 2)
     return distance
 
-trig1 = 29
-echo1 = 31
+trig1 = 33
+echo1 = 35
 trig2 = 40
 echo2 = 38
+c = False
 GPIO.setup(trig1, GPIO.OUT)
 GPIO.setup(echo1, GPIO.IN)
 GPIO.setup(trig2, GPIO.OUT)
@@ -50,15 +51,15 @@ try:
             countL = 0
             countR = 0
             if c == False:
-                os.System("python3 servo_straight.py")
+                os.system("python3 servo_straight.py")
             c = True
 
         if countL >= 5:
-            os.System("python3 servo_left.py")
+            os.system("python3 servo_left.py")
             c = False
 
         if countR >= 5:
-            os.System("python3 servo_right.py")
+            os.system("python3 servo_right.py")
             c = False
 
 
