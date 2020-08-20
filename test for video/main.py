@@ -8,9 +8,13 @@ import time
 print("Starting System")
 time.sleep(1)
 print("Initializing accelerometer")
-ok = 1
+ok = accl.accel()
 
 if ok == 1:
+    #print("Initializing SDR")
+    # trigger SDR here
+    #print("Initializing TensorFlow")
+    # triger TF here
     print("Initializing USS")
     pid = subprocess.Popen([sys.executable, "uss.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                            stdin=subprocess.PIPE)
