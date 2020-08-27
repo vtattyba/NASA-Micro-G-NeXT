@@ -1,15 +1,15 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO
 import time
+GPIO.setwarnings(False)
 count = 0
 tg = True
 distance = 0
 GPIO.setmode(GPIO.BOARD)
-PIN_TRIGGER = 33
-PIN_ECHO = 35
+PIN_TRIGGER = 40
+PIN_ECHO = 38
 GPIO.setup(PIN_TRIGGER, GPIO.OUT)
 GPIO.setup(PIN_ECHO, GPIO.IN)
-GPIO.setwarnings(False)
 try:
   while tg:
    
@@ -35,14 +35,7 @@ try:
     distance = round(pulse_duration * 17150, 2)
     print ("Distance:",distance,"cm")
           
-    if distance < 100 :
-          print ("WARNING - ")
-          count += 1 
-    if distance > 100:
-          count = 0
-    if count >= 5 :
-          print ("STOP:",distance,"cm")
-          tg = False
+
 except KeyboardInterrupt:
   GPIO.cleanup()
 
