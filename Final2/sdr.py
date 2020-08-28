@@ -5,8 +5,8 @@ import time
 
 class SDR: 
 	def __init__(self):
-		print('initializing SDR...')
-		'''
+		print('Initializing SDR...')
+		
 		webbrowser.open('http://192.168.4.1:8080/init', new=2)
 		time.sleep(1)
 		mouse.click(920,117)
@@ -17,8 +17,8 @@ class SDR:
 		time.sleep(2)
 		mouse.click(470,445)
 		time.sleep(30)
-		'''
-		print('DONE')
+		
+		print('SDR Calibrated!')
 
 	def check_SDR(self):
 		url = 'http://192.168.4.1:8081/compass.html'

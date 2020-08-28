@@ -7,7 +7,7 @@ import time
 
 class Motor:
 	def __init__(self):
-		#os.system('sudo killall pigpiod')
+		os.system('sudo killall pigpiod')
 		os.system("sudo pigpiod")
 		os.system('pigs s 4 1000')
 		time.sleep(2)

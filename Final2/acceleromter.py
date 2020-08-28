@@ -20,9 +20,10 @@ def accel():
 
         norm = (sq // 9.81)
 
-        # print(str(norm) + "g")
-
-        if norm >= 3:
-            print("Detected G")
-            break
+        print(str(norm) + "g")
+	
+        if norm >= 2:
+                print("Detected G")
+                break
     return 1
+
