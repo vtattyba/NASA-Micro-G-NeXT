@@ -1,14 +1,14 @@
 import subprocess
 import sys
 import os
-#import acceleromter as accl
 import time
+import RPi.GPIO as GPIO
 
+#import acceleromter as accl
 from detection import Detector
 #from sdr import SDR
+from motor import Motor
 from servo import Servo
-import RPi.GPIO as GPIO
-import concurrent.futures
 
 '''
 print("Starting System")
@@ -49,9 +49,9 @@ GPIO.setup(trig2, GPIO.OUT)
 GPIO.setup(echo2, GPIO.IN)
 
 if force == 1:
-    print("Calibrating Motor")
-    os.system("pigs s 4 1000")
-    time.sleep(2)
+    # motor initialization
+    motor = Motor()
+    
     
     # servo initialization
     servo = Servo()     
@@ -68,24 +68,23 @@ if force == 1:
     
     try: 
         while True:
+            now = time.time()
             # DETECTS WHETHER OR NOT PERSON IN FRAME
             # RETURNS: -1 - PERSON IN LEFT SIDE OF FRAME
             #           0 - PERSON IN CENTER OF FRAME
             #           1 - PERSON IN RIGHT OF FRAME
             #           2 - NOTHING FOUNDIN FRAME
-            with concurrent.futures.ThreadPoolExecutor() as executor:
-                future = executor.submit(det.check_tf)
-                tf_ret = future.result()
-    
+
+            tf_ret = det.check_tf()
             
             # uss
             uss_ret = 'N'
             dL = uss(trig1, echo1)
             dR = uss(trig2, echo2)
             
-            countL = countL + 1 if dL < 150 else countL
-            countR = countR + 1 if dR < 150 else countR
-            count_stop = count_stop + 1 if dL < 150 and dR < 150 else count_stop
+            countL = countL + 1 if dL < 100 else countL
+            countR = countR + 1 if dR < 100 else countR
+            count_stop = count_stop + 1 if dL < 100 and dR < 100 else count_stop
             
             if dL > 100 and dR > 100:
                 countL = 0
@@ -105,32 +104,49 @@ if force == 1:
             
             if count_stop >= 3: 
                 uss_ret = 'S'
-                
-            print('tf_ret:', tf_ret, 'uss_ret:', uss_ret)
+            print('tf_ret:', tf_ret, 'uss_ret:', uss_ret, 'time:', time.time() - now)
             
             if (tf_ret == 'S' or tf_ret == 'L' or tf_ret == 'R') and uss_ret == 'S':        # arrived at astronaut
                 print('DONE')
+                motor.quit()
                 det.quit()
                 servo.quit()
                 GPIO.cleanup()
                 break
-            elif tf_ret = 'N' and uss_ret == 'S':        # wall 
-                print('PANIC.')
-            elif uss_ret == 'L':                         # something on left, has to go right
-                servo.right()
-            elif uss_ret == 'R' :                        # something on right, go left
-                servo.left()
-            elif tf_ret = 'L' and (uss_ret == 'N' or uss_ret == 'R'):   # detection on left, and nothing in way
-                servo.left()
-            elif tf_ret = 'R' and (uss_ret == 'N' or uss_ret == 'L'):   # detection on right, and nothing in way
-                servo.right()
-            elif uss_ret = 'N' and tf_ret == 'N':        # wait for SDR
-                pass #temporary
-                        
-            else:                                        # nothing in way, go straight                                     
+            elif tf_ret == 'N' and uss_ret == 'N':        
+                # wait for SDR
+                pass
+            elif tf_ret == 'S' and uss_ret == 'N':
                 servo.straight()
-        
+                # motor.rpm(1300)
+            elif tf_ret == 'N' and uss_ret == 'S':      # something ahead, not human, stop.
+                motor.halt()
+            elif tf_ret == 'L' and (uss_ret == 'N' or uss_ret == 'R'):
+                servo.right()
+                #motor.rpm(1200)
+            elif tf_ret == 'R' and (uss_ret == 'N' or uss_ret == 'L'):
+                servo.left()
+                #motor.rpm(1200)
+            elif (tf_ret == 'N' or tf_ret == 'S') and uss_ret == 'L':
+                servo.left()
+                #motor.rpm(1200)
+            elif (tf_ret == 'N' or tf_ret == 'S') and uss_ret == 'R':
+                servo.right()
+                #motor.rpm(1200)
+            elif tf_ret == 'L' and uss_ret == 'L':
+                servo.right()
+                motor.quit()
+                det.quit()
+                servo.quit()
+                GPIO.cleanup()
+            elif tf_ret == 'R' and uss_ret == 'R':
+                servo.left()
+                motor.quit()
+                det.quit()
+                servo.quit()
+                GPIO.cleanup()
     except KeyboardInterrupt:
+        motor.quit()
         det.quit()
         servo.quit()
         GPIO.cleanup()

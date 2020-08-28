@@ -145,10 +145,10 @@ class Detector:
         return 
 
     def check_tf(self):
+        imH = 480
+        imW = 640
         # Grab frame from video stream
-        frame1 = self.videostream.read()
-
-        frame = frame1.copy()
+        frame = cv2.flip(self.videostream.read(), 0)
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         frame_resized = cv2.resize(frame_rgb, (self.width, self.height))
         input_data = np.expand_dims(frame_resized, axis=0)
@@ -168,23 +168,19 @@ class Detector:
         #num = interpreter.get_tensor(output_details[3]['index'])[0]  # Total number of detected objects (inaccurate and not needed)
 
         # Loop over all detections and draw detection box if confidence is above minimum threshold
-        for i in range(len(scores)):
-            if ((scores[i] > self.min_conf_threshold) and (scores[i] <= 1.0) and self.labels[int(classes[i])].upper() == "PERSON"):
-
-                # Get bounding box coordinates and draw box
-                # Interpreter can return coordinates that are outside of image dimensions, need to force them to be within image using max() and min()
-                imH = 480
-                imW = 640                
-                ymin = int(max(1,(boxes[i][0] * imH)))
-                xmin = int(max(1,(boxes[i][1] * imW)))
-                ymax = int(min(imH,(boxes[i][2] * imH)))
-                xmax = int(min(imW,(boxes[i][3] * imW)))
-                if (xmin+xmax)//2 < (2*imW//5):
-                    return 'L'
-                elif (xmin+xmax)//2 >= (2*imW//5) and (xmin+xmax)//2 <= (3*imW//5):
-                    return 'S'
-                elif (xmin+xmax)//2 > (3*imW//5):
-                    return 'R'
+        if ((scores[0] > self.min_conf_threshold) and (scores[0] <= 1.0) and self.labels[int(classes[0])].upper() == "PERSON"):
+            # Get bounding box coordinates and draw box
+            # Interpreter can return coordinates that are outside of image dimensions, need to force them to be within image using max() and min()                
+            ymin = int(max(1,(boxes[0][0] * imH)))
+            xmin = int(max(1,(boxes[0][1] * imW)))
+            ymax = int(min(imH,(boxes[0][2] * imH)))
+            xmax = int(min(imW,(boxes[0][3] * imW)))
+            if (xmin+xmax)//2 < (2*imW//5):
+                return 'L'
+            elif (xmin+xmax)//2 >= (2*imW//5) and (xmin+xmax)//2 <= (3*imW//5):
+                return 'S'
+            elif (xmin+xmax)//2 > (3*imW//5):
+                return 'R'
         return 'N'   # nothing detected in frame 
 
 
