@@ -6,17 +6,17 @@ import RPi.GPIO as GPIO
 
 #import acceleromter as accl
 from detection import Detector
-#from sdr import SDR
+from sdr import SDR
 from motor import Motor
 from servo import Servo
 
 
 print("Starting System")
 time.sleep(1)
-print("Initializing accelerometer")
-force = accl.accel()
+#print("Initializing accelerometer")
+#force = accl.accel()
 
-#force = 1
+force = 1
 
 
 countL = 0
@@ -60,20 +60,22 @@ if force == 1:
     det = Detector()     
     
     # sdr initialization 
-    #sdr = SDR()           
+    sdr = SDR()           
     
     try: 
+        i = 0
         while True:
             tf_ret = det.check_tf()
             # uss
+            print('fuck')
             uss_ret = 'N'
             dL = uss(trig1, echo1)
             dR = uss(trig2, echo2)
-            countL = countL + 1 if dL < 100 else countL
-            countR = countR + 1 if dR < 100 else countR
+            countL = countL + 1 if dL < 150 else countL
+            countR = countR + 1 if dR < 150 else countR
             count_stop = count_stop + 1 if dL < 100 and dR < 100 else count_stop
             
-            if dL > 100 and dR > 100:
+            if dL > 150 and dR > 150:
                 countL = 0
                 countR = 0
                 count_stop = 0
@@ -98,31 +100,38 @@ if force == 1:
                 break
             elif tf_ret == 'N' and uss_ret == 'N':        
                 # wait for SDR
-                pass
+                if i % 2 == 0:
+                    if sdr.check_SDR() == 'L':
+                        servo.right()
+                    else:
+                        servo.left()
+                    motor.rpm(1200)
+                prev_is_N = True
             elif tf_ret == 'S' and uss_ret == 'N':
                 servo.straight()
-                # motor.rpm(1300)
+                motor.rpm(1300)
             elif tf_ret == 'N' and uss_ret == 'S':      # something ahead, not human, stop.
-                print('Hi Wall')
+                
                 motor.halt()
             elif tf_ret == 'L' and (uss_ret == 'N' or uss_ret == 'R'):
                 servo.right()
-                #motor.rpm(1200)
+                motor.rpm(1200)
             elif tf_ret == 'R' and (uss_ret == 'N' or uss_ret == 'L'):
                 servo.left()
-                #motor.rpm(1200)
+                motor.rpm(1200)
             elif (tf_ret == 'N' or tf_ret == 'S') and uss_ret == 'L':
                 servo.left()
-                #motor.rpm(1200)
+                motor.rpm(1200)
             elif (tf_ret == 'N' or tf_ret == 'S') and uss_ret == 'R':
                 servo.right()
-                #motor.rpm(1200)
+                motor.rpm(1200)
             elif tf_ret == 'L' and uss_ret == 'L':
                 servo.right()
                 break
             elif tf_ret == 'R' and uss_ret == 'R':
                 servo.left()
                 break
+            i += 1
         motor.quit()
         det.quit()
         servo.quit()

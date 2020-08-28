@@ -22,20 +22,13 @@ def uss(PIN_TRIGGER,PIN_ECHO):
     return distance  
 
 
-def servo(sleep,cycle):
-    p.ChangeDutyCycle(cycle)
-    time.sleep(sleep)
-    return  
+ 
 
 
-GPIO.setup(7, GPIO.OUT)
-GPIO.setup(11, GPIO.IN)
-GPIO.setup(18, GPIO.OUT)
-GPIO.setup(16, GPIO.IN)
-servoPIN = 13
-GPIO.setup(servoPIN, GPIO.OUT)
-p = GPIO.PWM(servoPIN, 50) # GPIO 17 for PWM with 50Hz
-p.start(0) # Initialization
+GPIO.setup(40, GPIO.OUT)
+GPIO.setup(38, GPIO.IN)
+GPIO.setup(33, GPIO.OUT)
+GPIO.setup(35, GPIO.IN)
 R = False
 L = False
 c = False
@@ -44,8 +37,8 @@ try:
     while tg:
         
         
-        d1 = uss(7,11)
-        d2 = uss(18,16)
+        d1 = uss(40,38)
+        d2 = uss(33,35)
         
         print("LEFT - " + str(d1) + "    "+ "RIGHT - " + str(d2))
         
@@ -58,19 +51,23 @@ try:
             countL = 0
             countR = 0
             if c == False:
-                servo(1,6)
+                #servo(1,6)
+                print('straight')
+
             c = True
 
         if countL >= 5 :
-            servo(1,9)
+            #servo(.05, 4.5)
+            print('left')
+
             c = False
            
         if countR >= 5 :
-            servo(1,3)
+            #servo(.05, 7.5)
+            print('right')
             c = False
 
             
 except KeyboardInterrupt:
-    p.stop()
     GPIO.cleanup()
 

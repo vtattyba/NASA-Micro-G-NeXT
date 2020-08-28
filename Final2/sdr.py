@@ -6,7 +6,6 @@ import time
 class SDR: 
 	def __init__(self):
 		print('Initializing SDR...')
-		
 		webbrowser.open('http://192.168.4.1:8080/init', new=2)
 		time.sleep(1)
 		mouse.click(920,117)
@@ -25,15 +24,21 @@ class SDR:
 		browser = webdriver.Chrome()
 		browser.get(url)
 		browser.implicitly_wait(30)
-		time.sleep(9)
 		# need to collect at least 10 degrees and confirm the avg
-		degree = browser.find_element_by_id('doa').text
+		score_L = 0
+		score_R = 0
+		for i in range(20):
+			degree = int((browser.find_element_by_id('doa').text).split()[2])
+			if degree > 180:
+				score_L += 1
+			else: 
+				score_R += 1
+			time.sleep(0.01)
 		browser.quit()
-		degree = int(degree.split()[2])
 		# potentially change the degree threshold 
-		if degree > 180:
-			return -1
+		if score_L > score_R:
+			return 'L'
 		else:
-			return 1
-			
+			return 'R'
+
 

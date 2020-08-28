@@ -123,7 +123,7 @@ class Detector:
             self.interpreter = Interpreter(model_path=PATH_TO_CKPT)
 
         self.interpreter.allocate_tensors()
-
+        
         # Get model details
         self.input_details = self.interpreter.get_input_details()
         self.output_details = self.interpreter.get_output_details()
