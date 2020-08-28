@@ -25,7 +25,7 @@ degree = browser.find_element_by_id('doa').text
 print(degree)
 browser.quit()
 
-
+'''
 if degree > 180:
 	os.system("python3 servo_left.py")
 	
@@ -36,4 +36,4 @@ time.sleep(1)
 os.system("pigs s 4 1300")
 time.sleep(7)
 os.system("python3 servo_straight.py")
-
+'''
