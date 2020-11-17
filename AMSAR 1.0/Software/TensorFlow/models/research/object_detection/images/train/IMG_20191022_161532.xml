@@ -1,0 +1,26 @@
+<annotation>
+	<folder>undrawn</folder>
+	<filename>IMG_20191022_161532.jpg</filename>
+	<path>C:\det_chapstick\Chapstick\undrawn\IMG_20191022_161532.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>960</width>
+		<height>960</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>chapstick</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>355</xmin>
+			<ymin>562</ymin>
+			<xmax>440</xmax>
+			<ymax>766</ymax>
+		</bndbox>
+	</object>
+</annotation>

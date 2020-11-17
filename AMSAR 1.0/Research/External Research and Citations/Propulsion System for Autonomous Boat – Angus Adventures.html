@@ -1,0 +1,1279 @@
+<!DOCTYPE HTML>
+<html lang="en-CA">
+
+	<!-- START head -->
+	<head>
+		<meta charset="UTF-8">
+	<meta name="theme-color" content="">
+
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://angusadventures.com/xmlrpc.php" />
+
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://angusadventures.com/wp-content/uploads/2017/04/Angus-Adventures-icon-144x144.jpg" />
+			<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://angusadventures.com/wp-content/uploads/2017/04/Angus-Adventures-icon-144x144.jpg" />
+			<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://angusadventures.com/wp-content/uploads/2017/04/Angus-Adventures-icon-72x72.jpg" />
+			<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://angusadventures.com/wp-content/uploads/2017/04/Angus-Adventures-icon-57x57.jpg" />
+	
+	
+				<meta property="og:image" content="https://angusadventures.com/wp-content/uploads/2017/11/IMG_0745.jpg" />
+		
+	<!--[if lte IE 8]>
+	<script src="https://angusadventures.com/wp-content/themes/HighendWP/scripts/html5shiv.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<title>Propulsion System for Autonomous Boat &#8211; Angus Adventures</title>
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Angus Adventures &raquo; Feed" href="https://angusadventures.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Angus Adventures &raquo; Comments Feed" href="https://angusadventures.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Angus Adventures &raquo; Propulsion System for Autonomous Boat Comments Feed" href="https://angusadventures.com/propulsion-system-for-autonomous-boat/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.2.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var mi_version         = '7.2.0';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-97001709-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-97001709-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('require', 'displayfeatures');
+		__gaTracker('require', 'linkid', 'linkid.js');
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/angusadventures.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='layerslider-css'  href='https://angusadventures.com/wp-content/plugins/LayerSlider/static/layerslider/css/layerslider.css?ver=6.7.6' type='text/css' media='all' />
+<link rel='stylesheet' id='ls-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://angusadventures.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://angusadventures.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.0.4' type='text/css' media='all' />
+<link rel='stylesheet' id='essential-grid-plugin-settings-css'  href='https://angusadventures.com/wp-content/plugins/essential-grid/public/assets/css/settings.css?ver=2.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='tp-open-sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%2C800&#038;ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='tp-raleway-css'  href='https://fonts.googleapis.com/css?family=Raleway%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='tp-droid-serif-css'  href='https://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C700&#038;ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='tp-fontello-css'  href='https://angusadventures.com/wp-content/plugins/essential-grid/public/assets/font/fontello/css/fontello.css?ver=2.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='https://angusadventures.com/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.4.8' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<link rel='stylesheet' id='hb_styles-css'  href='https://angusadventures.com/wp-content/themes/HighendWP/style.css?ver=3.4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='hb_responsive-css'  href='https://angusadventures.com/wp-content/themes/HighendWP/css/responsive.css?ver=3.4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='hb_icomoon-css'  href='https://angusadventures.com/wp-content/themes/HighendWP/css/icons.css?ver=3.4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='hb_dynamic_styles-css'  href='https://angusadventures.com/wp-content/themes/HighendWP/css/dynamic-styles.css?ver=1570708275' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var LS_Meta = {"v":"6.7.6"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/plugins/LayerSlider/static/layerslider/js/greensock.js?ver=1.19.0'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/plugins/LayerSlider/static/layerslider/js/layerslider.kreaturamedia.jquery.js?ver=6.7.6'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/plugins/LayerSlider/static/layerslider/js/layerslider.transitions.js?ver=6.7.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"https:\/\/angusadventures.com","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js?ver=7.2.0'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/plugins/essential-grid/public/assets/js/jquery.esgbox.min.js?ver=2.2.5'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/plugins/essential-grid/public/assets/js/jquery.themepunch.tools.min.js?ver=2.2.5'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.4.8'></script>
+<meta name="generator" content="Powered by LayerSlider 6.7.6 - Multi-Purpose, Responsive, Parallax, Mobile-Friendly Slider Plugin for WordPress." />
+<!-- LayerSlider updates and docs at: https://layerslider.kreaturamedia.com -->
+<link rel='https://api.w.org/' href='https://angusadventures.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://angusadventures.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://angusadventures.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Global News Interview on Autonomous Atlantic Crossing' href='https://angusadventures.com/global-news/' />
+<link rel='next' title='Maritime Museums&#8217; Autonomous Boat Exhibit featured in BC Shipping News' href='https://angusadventures.com/maritime-museums-autonomous-boat-exhibit-featured-in-shipping-news/' />
+<meta name="generator" content="WordPress 5.2.3" />
+<link rel="canonical" href="https://angusadventures.com/propulsion-system-for-autonomous-boat/" />
+<link rel='shortlink' href='https://angusadventures.com/?p=7481' />
+<link rel="alternate" type="application/json+oembed" href="https://angusadventures.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fangusadventures.com%2Fpropulsion-system-for-autonomous-boat%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://angusadventures.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fangusadventures.com%2Fpropulsion-system-for-autonomous-boat%2F&#038;format=xml" />
+		<script type="text/javascript">
+			var ajaxRevslider;
+			
+			jQuery(document).ready(function() {
+				// CUSTOM AJAX CONTENT LOADING FUNCTION
+				ajaxRevslider = function(obj) {
+				
+					// obj.type : Post Type
+					// obj.id : ID of Content to Load
+					// obj.aspectratio : The Aspect Ratio of the Container / Media
+					// obj.selector : The Container Selector where the Content of Ajax will be injected. It is done via the Essential Grid on Return of Content
+					
+					var content = "";
+
+					data = {};
+					
+					data.action = 'revslider_ajax_call_front';
+					data.client_action = 'get_slider_html';
+					data.token = '31bd74068e';
+					data.type = obj.type;
+					data.id = obj.id;
+					data.aspectratio = obj.aspectratio;
+					
+					// SYNC AJAX REQUEST
+					jQuery.ajax({
+						type:"post",
+						url:"https://angusadventures.com/wp-admin/admin-ajax.php",
+						dataType: 'json',
+						data:data,
+						async:false,
+						success: function(ret, textStatus, XMLHttpRequest) {
+							if(ret.success == true)
+								content = ret.data;								
+						},
+						error: function(e) {
+							console.log(e);
+						}
+					});
+					
+					 // FIRST RETURN THE CONTENT WHEN IT IS LOADED !!
+					 return content;						 
+				};
+				
+				// CUSTOM AJAX FUNCTION TO REMOVE THE SLIDER
+				var ajaxRemoveRevslider = function(obj) {
+					return jQuery(obj.selector+" .rev_slider").revkill();
+				};
+
+				// EXTEND THE AJAX CONTENT LOADING TYPES WITH TYPE AND FUNCTION
+				var extendessential = setInterval(function() {
+					if (jQuery.fn.tpessential != undefined) {
+						clearInterval(extendessential);
+						if(typeof(jQuery.fn.tpessential.defaults) !== 'undefined') {
+							jQuery.fn.tpessential.defaults.ajaxTypes.push({type:"revslider",func:ajaxRevslider,killfunc:ajaxRemoveRevslider,openAnimationSpeed:0.3});   
+							// type:  Name of the Post to load via Ajax into the Essential Grid Ajax Container
+							// func: the Function Name which is Called once the Item with the Post Type has been clicked
+							// killfunc: function to kill in case the Ajax Window going to be removed (before Remove function !
+							// openAnimationSpeed: how quick the Ajax Content window should be animated (default is 0.3)
+						}
+					}
+				},30);
+			});
+		</script>
+		<script type="text/javascript">var ajaxurl = "https://angusadventures.com/wp-admin/admin-ajax.php"</script><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://angusadventures.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><meta property="og:site_name" content="Angus Adventures" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="fb:app_id" content="211103699537" />
+<meta property="og:url" content="https://angusadventures.com/propulsion-system-for-autonomous-boat/" />
+<meta property="og:title" content="Propulsion System for Autonomous Boat" />
+<meta property="og:description" content="As we proceed with building various aspects of the autonomous boat, we will share the details here. This week, we are moving forward with the electric drive system, which is detailed here.  You can also watch the video below to hear Colin describe our prototype pod motor. &nbsp; There are two primary ways of driving&hellip;" />
+<meta property="og:image" content="https://angusadventures.com/wp-content/uploads/2017/11/IMG_0745.jpg" />
+<meta property="og:image:width" content="2016" />
+<meta property="og:image:height" content="1512" />
+<meta property="og:image" content="https://angusadventures.com/wp-content/uploads/2017/11/motor-pod-design.png" />
+<meta property="og:image:width" content="268" />
+<meta property="og:image:height" content="278" />
+<meta property="og:image" content="https://angusadventures.com/wp-content/uploads/2017/11/magnetic-coupler.png" />
+<meta property="og:image:width" content="345" />
+<meta property="og:image:height" content="232" />
+<meta property="article:published_time" content="2017-11-20T21:17:53+00:00" />
+<meta property="article:modified_time" content="2017-11-20T21:29:02+00:00" />
+<meta property="article:author" content="https://angusadventures.com/author/julie/" />
+<meta property="article:section" content="Autonomous Boat" />
+<meta property="article:tag" content="autonomous boat" />
+<meta property="fb:profile_id" content="612685281" />
+<meta name="generator" content="Powered by Slider Revolution 5.4.8 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="https://angusadventures.com/wp-content/uploads/2017/04/cropped-logo514lgtbluescaled-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://angusadventures.com/wp-content/uploads/2017/04/cropped-logo514lgtbluescaled-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://angusadventures.com/wp-content/uploads/2017/04/cropped-logo514lgtbluescaled-180x180.png" />
+<meta name="msapplication-TileImage" content="https://angusadventures.com/wp-content/uploads/2017/04/cropped-logo514lgtbluescaled-270x270.png" />
+<script type="text/javascript">function setREVStartSize(e){									
+						try{ e.c=jQuery(e.c);var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
+							if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})					
+						}catch(d){console.log("Failure at Presize of Slider:"+d)}						
+					};</script>
+		<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+#main-wrapper .hb-main-content a {
+color: #25a2da !important;
+}
+
+
+		</style>
+		<style type="text/css">1</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+	<!-- Theme Options Font Settings -->
+	<style type="text/css">
+		</style>
+
+	</head>
+	<!-- END head -->
+
+	
+	<!-- START body -->
+	<body class="post-template-default single single-post postid-7481 single-format-standard  disable-native-prettyphoto hb-stretched-layout wpb-js-composer js-comp-ver-5.5.4 vc_responsive" data-fixed-footer="0" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+	
+	
+	
+	<div id="mobile-menu-wrap">
+<form method="get" class="mobile-search-form" action="https://angusadventures.com/"><input type="text" placeholder="Search" name="s" autocomplete="off" /></form>
+<a class="mobile-menu-close"><i class="hb-icon-x"></i></a>
+<nav id="mobile-menu" class="clearfix interactive">
+<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu-main-menu-container"><li id="menu-item-5236" class="megamenu columns-3 menu-caption menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-5236"><a href="https://angusadventures.com/">Home</a></li>
+<li id="menu-item-6158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6158"><a href="https://angusadventures.com/about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-5251" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5251"><a href="https://angusadventures.com/team/">About Julie and Colin</a></li>
+	<li id="menu-item-5922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5922"><a href="https://angusadventures.com/media/">In the Media</a></li>
+</ul>
+</li>
+<li id="menu-item-5574" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5574"><a href="https://angusadventures.com/expedition/">Expeditions</a>
+<ul class="sub-menu">
+	<li id="menu-item-6143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6143"><a href="https://angusadventures.com/expedition/upcoming-expeditions/">Upcoming Expeditions</a></li>
+	<li id="menu-item-7325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7325"><a href="https://angusadventures.com/expedition/autonomous-ocean/">Autonomous Ocean Crossing</a></li>
+	<li id="menu-item-5618" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5618"><a href="https://angusadventures.com/expedition/race-to-alaska/">Race to Alaska</a></li>
+	<li id="menu-item-5634" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5634"><a href="https://angusadventures.com/expedition/yukon/">Yukon Gold Rush Row</a></li>
+	<li id="menu-item-5608" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5608"><a href="https://angusadventures.com/expedition/olive-odyssey/">Olive Odyssey Expedition</a></li>
+	<li id="menu-item-5613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5613"><a href="https://angusadventures.com/expedition/van-isle-row/">Rowing Around Vancouver Island</a></li>
+	<li id="menu-item-5612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5612"><a href="https://angusadventures.com/expedition/rowedtripexped/">Rowed Trip – Scotland to Syria by Oar</a></li>
+	<li id="menu-item-5575" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5575"><a href="https://angusadventures.com/expedition/world/">Around the World by Human Power</a></li>
+	<li id="menu-item-5615" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5615"><a href="https://angusadventures.com/expedition/yenisey/">The First Descent of the Yenisey River</a></li>
+	<li id="menu-item-5614" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5614"><a href="https://angusadventures.com/expedition/amazon/">Running the Amazon</a></li>
+	<li id="menu-item-5609" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5609"><a href="https://angusadventures.com/expedition/sailing/">Five Years Offshore Sailing</a></li>
+</ul>
+</li>
+<li id="menu-item-5576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5576"><a href="https://angusadventures.com/books-films/">Books &#038; Films</a>
+<ul class="sub-menu">
+	<li id="menu-item-6727" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6727"><a href="https://angusadventures.com/books-films/writing-and-filming/">On Writing and Filming</a></li>
+	<li id="menu-item-5799" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5799"><a href="https://angusadventures.com/books-films/olive-odyssey/">Olive Odyssey</a></li>
+	<li id="menu-item-5800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5800"><a href="https://angusadventures.com/books-films/rowedtripbook/">Rowed Trip</a></li>
+	<li id="menu-item-5802" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5802"><a href="https://angusadventures.com/books-films/rowboat-in-a-hurricane/">Rowboat in a Hurricane</a></li>
+	<li id="menu-item-5803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5803"><a href="https://angusadventures.com/books-films/beyond-the-horizon/">Beyond the Horizon</a></li>
+	<li id="menu-item-5801" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5801"><a href="https://angusadventures.com/books-films/lost-in-mongolia/">Lost in Mongolia</a></li>
+	<li id="menu-item-5577" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5577"><a href="https://angusadventures.com/books-films/amazon-extreme/">Amazon Extreme</a></li>
+</ul>
+</li>
+<li id="menu-item-6187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6187"><a href="https://angusadventures.com/keynotespeakers/">Keynote Speakers</a>
+<ul class="sub-menu">
+	<li id="menu-item-6695" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6695"><a href="https://angusadventures.com/keynotespeakers/motivational-speakers/">Selecting a Speaker</a></li>
+	<li id="menu-item-5713" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5713"><a href="https://angusadventures.com/keynotespeakers/keynote/">Keynote Topics</a></li>
+	<li id="menu-item-5581" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5581"><a href="https://angusadventures.com/keynotespeakers/testimonials/">Testimonials</a></li>
+	<li id="menu-item-5716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5716"><a href="https://angusadventures.com/keynotespeakers/clients/">Clients</a></li>
+	<li id="menu-item-6188" class="menu-item menu-item-type-post_type menu-item-object-team menu-item-6188"><a href="https://angusadventures.com/team/colin-angus/">Colin Angus Bio</a></li>
+	<li id="menu-item-6189" class="menu-item menu-item-type-post_type menu-item-object-team menu-item-6189"><a href="https://angusadventures.com/team/julie-angus/">Julie Angus Bio</a></li>
+</ul>
+</li>
+<li id="menu-item-6290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6290"><a href="https://angusadventures.com/adventurer-handbook/">Adventurer&#8217;s Handbook</a>
+<ul class="sub-menu">
+	<li id="menu-item-5638" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5638"><a href="https://angusadventures.com/category/featured-expeditions/">Featured Expeditions</a></li>
+	<li id="menu-item-5631" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5631"><a href="https://angusadventures.com/adventurer-handbook/beringstrait/">Crossing the Bering Strait &#038; Beringian Gap</a></li>
+	<li id="menu-item-5658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5658"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/">Arctic Survival</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5663" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5663"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/tents/">Arctic Tents</a></li>
+		<li id="menu-item-5660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5660"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/cooking-food-and-water/">Cooking, Food, and Water</a></li>
+		<li id="menu-item-5662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5662"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/clothing/">Clothing</a></li>
+		<li id="menu-item-5659" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5659"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/sleepingbags/">Sleeping Bags</a></li>
+		<li id="menu-item-5665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5665"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/sleepingpads/">Sleeping Pads</a></li>
+		<li id="menu-item-5661" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5661"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/condensation/">Condensation and Vapour Barriers</a></li>
+	</ul>
+</li>
+	<li id="menu-item-5633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5633"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/">Ocean Rowing</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5629" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5629"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/seasons/">What Time of Year to Row</a></li>
+		<li id="menu-item-5628" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5628"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/seaworthiness/">Understanding the Principles of Seaworthiness</a></li>
+		<li id="menu-item-5654" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5654"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/equipment/">Equipment</a></li>
+		<li id="menu-item-5627" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5627"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/safety/">Safety Equipment</a></li>
+		<li id="menu-item-5655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5655"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/electrical/">Electrical System</a></li>
+		<li id="menu-item-5653" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5653"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/food/">Food</a></li>
+		<li id="menu-item-5625" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5625"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/ocean-rowboats/">Ocean Rowboats</a></li>
+		<li id="menu-item-5652" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5652"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/misc/">Miscellaneous Information</a></li>
+		<li id="menu-item-5626" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5626"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/records/">Ocean Rowing Records</a></li>
+	</ul>
+</li>
+	<li id="menu-item-6291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6291"><a href="https://angusadventures.com/adventurer-handbook/r2ak/">R2AK</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5640"><a href="https://angusadventures.com/adventurer-handbook/r2ak-records/">R2AK Records 2015</a></li>
+		<li id="menu-item-5639" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5639"><a href="https://angusadventures.com/category/r2ak/">R2AK blog posts</a></li>
+	</ul>
+</li>
+	<li id="menu-item-5667" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5667"><a href="https://angusadventures.com/adventurer-handbook/touring-rowboats/">Touring Rowboats</a></li>
+	<li id="menu-item-5632" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5632"><a href="https://angusadventures.com/adventurer-handbook/cycling/">Cycle Touring</a>
+	<ul class="sub-menu">
+		<li id="menu-item-5671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5671"><a href="https://angusadventures.com/adventurer-handbook/cycling/bike/">The Bike</a></li>
+		<li id="menu-item-5670" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5670"><a href="https://angusadventures.com/adventurer-handbook/cycling/tires/">Tires</a></li>
+		<li id="menu-item-5674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5674"><a href="https://angusadventures.com/adventurer-handbook/cycling/water/">Water</a></li>
+		<li id="menu-item-5672" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5672"><a href="https://angusadventures.com/adventurer-handbook/cycling/seat/">Seat</a></li>
+		<li id="menu-item-5673" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5673"><a href="https://angusadventures.com/adventurer-handbook/cycling/panniers/">Panniers and Trailers</a></li>
+		<li id="menu-item-5675" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5675"><a href="https://angusadventures.com/adventurer-handbook/cycling/equipment/">Equipment</a></li>
+		<li id="menu-item-5677" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5677"><a href="https://angusadventures.com/adventurer-handbook/cycling/camping/">Camping</a></li>
+		<li id="menu-item-5676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5676"><a href="https://angusadventures.com/adventurer-handbook/cycling/trips/">Cycling Destinations</a></li>
+	</ul>
+</li>
+	<li id="menu-item-5630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5630"><a href="https://angusadventures.com/adventurer-handbook/coldweather/">Cold Weather Cycling</a></li>
+	<li id="menu-item-5678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="https://angusadventures.com/adventurer-handbook/trailers/">Bike Trailers</a></li>
+	<li id="menu-item-5657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5657"><a href="https://angusadventures.com/adventurer-handbook/about-global-circumnavigations/">About Global Circumnavigations</a></li>
+	<li id="menu-item-5669" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5669"><a href="https://angusadventures.com/adventurer-handbook/yeniseyriver/">Yenisey River</a></li>
+	<li id="menu-item-5668" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5668"><a href="https://angusadventures.com/adventurer-handbook/amazonriver/">Amazon River</a></li>
+	<li id="menu-item-5656" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5656"><a href="https://angusadventures.com/adventurer-handbook/brokenislands/">The Broken Islands Group</a></li>
+</ul>
+</li>
+<li id="menu-item-5686" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5686"><a href="https://angusadventures.com/blog-updates/">Blog</a></li>
+<li id="menu-item-5703" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5703"><a href="https://angusadventures.com/contact-us/">Contact Us</a></li>
+</ul></div></nav>
+</div>
+
+
+	
+
+	<!-- BEGIN #hb-wrap -->
+	<div id="hb-wrap">
+
+	<!-- BEGIN #main-wrapper -->
+	<div id="main-wrapper" class="hb-stretched-layout hb_boxed_layout_regular with-shadow width-1140 hb-responsive nav-type-1" data-cart-url="" data-cart-count=""  data-search-header=1>
+
+		
+						<!-- BEGIN #hb-header -->
+				<header id="hb-header" class="">
+
+					   
+<!-- BEGIN #header-bar -->
+<div id="header-bar" class="style-1 clearfix">
+
+    <!-- BEGIN .container or .container-wide -->
+    <div class="container">
+
+            <!-- BEGIN .top-widget Information -->
+        <div id="top-info-widget" class="top-widget float-left ">
+            <p><i class="hb-moon-arrow-right-5"></i>Adventurers, Writers, and Professional Speakers</p>
+        </div>
+        <!-- END .top-widget -->
+            <!-- BEGIN .top-widget Email -->
+        <div class="top-widget float-left clear-r-margin">
+            <a href="mailto:team@angusadventures.com"><i class="hb-moon-envelop"></i>team@angusadventures.com</a>
+        </div>
+        <!-- END .top-widget -->
+        <!-- BEGIN .top-widget -->
+    <div id="top-login-widget" class="top-widget float-right clear-r-margin">
+                    
+                        <a href="#"><!--<i class="hb-moon-user"></i>-->Login<i class="icon-angle-down"></i></a>
+                <!-- BEGIN .login-dropdown -->
+                <div class="hb-dropdown-box login-dropdown">
+                    <!-- START #login-form -->
+<form action="https://angusadventures.com/wp-login.php?redirect_to=https%3A%2F%2Fangusadventures.com%2Fpropulsion-system-for-autonomous-boat%2F" id="hb-login-form" name="hb-login-form" method="post" class="hb-login-form" >
+    <p><input type="text" id="username" name="log" placeholder="Username" class="required requiredField text-input"/></p>
+    <p><input type="password" id="password" name="pwd" placeholder="Password" class="required requiredField text-input"></p>
+    <p class="hb-checkbox clearfix">
+        <label><input name="rememberme" type="checkbox" id="rememberme" value="forever" class="hb-remember-checkbox" />Remember me?</label>
+            </p>
+
+    <a href="#" id="hb-submit-login-form" class="hb-button no-three-d hb-small-button">Login</a>
+</form>                    <div class="big-overlay"><i class="hb-moon-user"></i></div>
+                </div>
+                <!-- END .login-dropdown-->
+        
+    </div>
+    <!-- END .top-widget -->
+        
+    
+        <!-- BEGIN .top-widget -->
+        <div id="top-socials-widget" class="top-widget float-right social-list">
+            <ul class="clearfix">
+                                                            <li>
+                                <a href="http://facebook.com/angusadventures" original-title="Facebook" target="_blank"><i class="hb-moon-facebook"></i></a> 
+                            </li>
+                                                                        <li>
+                                <a href="https://www.youtube.com/user/angusadventures" original-title="Youtube" target="_blank"><i class="hb-moon-youtube"></i></a> 
+                            </li>
+                                                                        <li>
+                                <a href="https://twitter.com/angusadventures" original-title="Twitter" target="_blank"><i class="hb-moon-twitter"></i></a> 
+                            </li>
+                                                                        <li>
+                                <a href="https://www.flickr.com/photos/angusadventures/sets/" original-title="Flickr" target="_blank"><i class="hb-moon-flickr"></i></a> 
+                            </li>
+                                        
+            </ul>
+        </div>
+        <!-- END .top-widget -->
+
+    
+    </div>
+    <!-- END .container or .container-wide -->
+
+</div>
+<!-- END #header-bar -->
+
+<div id="header-dropdown">
+    <div id="contact-map" data-api-key="" data-map-buttons="1" data-map-level="16" data-map-lat="48.856614" data-map-lng="2.352222" data-map-img="" data-overlay-color="#ff6838"></div>
+    <div class="close-map"><i class="hb-moon-close-2"></i></div>
+</div>					
+        <!-- BEGIN #header-inner -->
+        <div id="header-inner" class="sticky-nav nav-type-1 hb-ajax-search clearfix" style="height: 80px; line-height: 80px;" data-height="80" data-sticky-height="60" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+
+            <!-- BEGIN #header-inner-bg -->
+            <div id="header-inner-bg">
+                
+                <!-- BEGIN .container or .container-wide -->
+                <div class="container">
+                    
+                    <!-- BEGIN #logo -->
+                    <div id="logo" style="height:80px; line-height: 80px;">
+                                                <a href="https://angusadventures.com" class="image-logo">
+
+                            
+                            <span class="hb-dark-logo hb-visible-logo hb-logo-wrap">
+                                <img src="https://angusadventures.com/wp-content/uploads/2017/02/Black-with-Blue-Angus-horizontal318highend.png" width="318" height="72" class="default" alt="Angus Adventures"/>
+                                
+                                                            </span>
+
+                                                    </a>
+
+                                            </div>
+                    <!-- END #logo -->
+
+                    
+                    
+                    
+                    
+                    <!-- BEGIN .main-navigation -->
+                    <nav class="main-navigation third-skin hb-effect-10 dark-menu-dropdown clearfix" style="height: 80px; line-height: 80px;" data-height="80" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+
+                        
+                        <ul id="main-nav" class="sf-menu"><li class="megamenu columns-3 menu-caption menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-5236"><a href="https://angusadventures.com/"><span>Home</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6158"><a href="https://angusadventures.com/about/"><span>About</span></a>
+<ul  class="sub-menu" style=''>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5251"><a href="https://angusadventures.com/team/"><span>About Julie and Colin</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5922"><a href="https://angusadventures.com/media/"><span>In the Media</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5574"><a href="https://angusadventures.com/expedition/"><span>Expeditions</span></a>
+<ul  class="sub-menu" style=''>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6143"><a href="https://angusadventures.com/expedition/upcoming-expeditions/"><span>Upcoming Expeditions</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7325"><a href="https://angusadventures.com/expedition/autonomous-ocean/"><span>Autonomous Ocean Crossing</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5618"><a href="https://angusadventures.com/expedition/race-to-alaska/"><span>Race to Alaska</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5634"><a href="https://angusadventures.com/expedition/yukon/"><span>Yukon Gold Rush Row</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5608"><a href="https://angusadventures.com/expedition/olive-odyssey/"><span>Olive Odyssey Expedition</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5613"><a href="https://angusadventures.com/expedition/van-isle-row/"><span>Rowing Around Vancouver Island</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5612"><a href="https://angusadventures.com/expedition/rowedtripexped/"><span>Rowed Trip – Scotland to Syria by Oar</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5575"><a href="https://angusadventures.com/expedition/world/"><span>Around the World by Human Power</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5615"><a href="https://angusadventures.com/expedition/yenisey/"><span>The First Descent of the Yenisey River</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5614"><a href="https://angusadventures.com/expedition/amazon/"><span>Running the Amazon</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5609"><a href="https://angusadventures.com/expedition/sailing/"><span>Five Years Offshore Sailing</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5576"><a href="https://angusadventures.com/books-films/"><span>Books &#038; Films</span></a>
+<ul  class="sub-menu" style=''>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6727"><a href="https://angusadventures.com/books-films/writing-and-filming/"><span>On Writing and Filming</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5799"><a href="https://angusadventures.com/books-films/olive-odyssey/"><span>Olive Odyssey</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5800"><a href="https://angusadventures.com/books-films/rowedtripbook/"><span>Rowed Trip</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5802"><a href="https://angusadventures.com/books-films/rowboat-in-a-hurricane/"><span>Rowboat in a Hurricane</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5803"><a href="https://angusadventures.com/books-films/beyond-the-horizon/"><span>Beyond the Horizon</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5801"><a href="https://angusadventures.com/books-films/lost-in-mongolia/"><span>Lost in Mongolia</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5577"><a href="https://angusadventures.com/books-films/amazon-extreme/"><span>Amazon Extreme</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6187"><a href="https://angusadventures.com/keynotespeakers/"><span>Keynote Speakers</span></a>
+<ul  class="sub-menu" style=''>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6695"><a href="https://angusadventures.com/keynotespeakers/motivational-speakers/"><span>Selecting a Speaker</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5713"><a href="https://angusadventures.com/keynotespeakers/keynote/"><span>Keynote Topics</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5581"><a href="https://angusadventures.com/keynotespeakers/testimonials/"><span>Testimonials</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5716"><a href="https://angusadventures.com/keynotespeakers/clients/"><span>Clients</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-team menu-item-6188"><a href="https://angusadventures.com/team/colin-angus/"><span>Colin Angus Bio</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-team menu-item-6189"><a href="https://angusadventures.com/team/julie-angus/"><span>Julie Angus Bio</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6290"><a href="https://angusadventures.com/adventurer-handbook/"><span>Adventurer&#8217;s Handbook</span></a>
+<ul  class="sub-menu" style=''>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5638"><a href="https://angusadventures.com/category/featured-expeditions/"><span>Featured Expeditions</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5631"><a href="https://angusadventures.com/adventurer-handbook/beringstrait/"><span>Crossing the Bering Strait &#038; Beringian Gap</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5658"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/"><span>Arctic Survival</span></a>
+	<ul  class="sub-menu" style=''>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5663"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/tents/"><span>Arctic Tents</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5660"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/cooking-food-and-water/"><span>Cooking, Food, and Water</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5662"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/clothing/"><span>Clothing</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5659"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/sleepingbags/"><span>Sleeping Bags</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5665"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/sleepingpads/"><span>Sleeping Pads</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5661"><a href="https://angusadventures.com/adventurer-handbook/arctic_survival/condensation/"><span>Condensation and Vapour Barriers</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5633"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/"><span>Ocean Rowing</span></a>
+	<ul  class="sub-menu" style=''>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5629"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/seasons/"><span>What Time of Year to Row</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5628"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/seaworthiness/"><span>Understanding the Principles of Seaworthiness</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5654"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/equipment/"><span>Equipment</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5627"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/safety/"><span>Safety Equipment</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5655"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/electrical/"><span>Electrical System</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5653"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/food/"><span>Food</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5625"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/ocean-rowboats/"><span>Ocean Rowboats</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5652"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/misc/"><span>Miscellaneous Information</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5626"><a href="https://angusadventures.com/adventurer-handbook/oceanrowing/records/"><span>Ocean Rowing Records</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6291"><a href="https://angusadventures.com/adventurer-handbook/r2ak/"><span>R2AK</span></a>
+	<ul  class="sub-menu" style=''>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5640"><a href="https://angusadventures.com/adventurer-handbook/r2ak-records/"><span>R2AK Records 2015</span></a></li>
+		<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5639"><a href="https://angusadventures.com/category/r2ak/"><span>R2AK blog posts</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5667"><a href="https://angusadventures.com/adventurer-handbook/touring-rowboats/"><span>Touring Rowboats</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5632"><a href="https://angusadventures.com/adventurer-handbook/cycling/"><span>Cycle Touring</span></a>
+	<ul  class="sub-menu" style=''>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5671"><a href="https://angusadventures.com/adventurer-handbook/cycling/bike/"><span>The Bike</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5670"><a href="https://angusadventures.com/adventurer-handbook/cycling/tires/"><span>Tires</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5674"><a href="https://angusadventures.com/adventurer-handbook/cycling/water/"><span>Water</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5672"><a href="https://angusadventures.com/adventurer-handbook/cycling/seat/"><span>Seat</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5673"><a href="https://angusadventures.com/adventurer-handbook/cycling/panniers/"><span>Panniers and Trailers</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5675"><a href="https://angusadventures.com/adventurer-handbook/cycling/equipment/"><span>Equipment</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5677"><a href="https://angusadventures.com/adventurer-handbook/cycling/camping/"><span>Camping</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5676"><a href="https://angusadventures.com/adventurer-handbook/cycling/trips/"><span>Cycling Destinations</span></a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5630"><a href="https://angusadventures.com/adventurer-handbook/coldweather/"><span>Cold Weather Cycling</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5678"><a href="https://angusadventures.com/adventurer-handbook/trailers/"><span>Bike Trailers</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5657"><a href="https://angusadventures.com/adventurer-handbook/about-global-circumnavigations/"><span>About Global Circumnavigations</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5669"><a href="https://angusadventures.com/adventurer-handbook/yeniseyriver/"><span>Yenisey River</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5668"><a href="https://angusadventures.com/adventurer-handbook/amazonriver/"><span>Amazon River</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5656"><a href="https://angusadventures.com/adventurer-handbook/brokenislands/"><span>The Broken Islands Group</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5686"><a href="https://angusadventures.com/blog-updates/"><span>Blog</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5703"><a href="https://angusadventures.com/contact-us/"><span>Contact Us</span></a></li>
+</ul>
+                                                <!-- BEGIN #fancy-search -->
+                        <div id="fancy-search">
+                            <form id="fancy-search-form" action="https://angusadventures.com/" novalidate="" autocomplete="off">
+                                <input type="text" name="s" id="s" placeholder="Type keywords and press enter" autocomplete="off">
+                            </form>
+                        <a href="#" id="close-fancy-search" class="no-transition"><i class="hb-icon-x"></i></a>
+                        <span class="spinner"></span>
+                        </div>
+                        <!-- END #fancy-serach -->
+                        
+
+                                                <a href="#" id="show-nav-menu"><i class="icon-bars"></i></a>
+                        
+
+                        
+                    </nav>
+                    <!-- END .main-navigation -->
+                    
+                                                </div>
+                        <!-- END .container or .container-wide -->
+                                    </div>
+            <!-- END #header-inner-bg -->
+
+        </div>
+        <!-- END #header-inner -->
+
+
+				</header>
+				<!-- END #hb-header -->
+
+				
+<!-- START #hb-page-title -->
+<div class="hb-color-background normal-padding dark-text" id="hb-page-title">
+
+	<div class="hb-image-bg-wrap" style="background-color:#fafafa"></div>
+
+	<div class="container clearfix alignleft">
+		<!-- START .hb-page-title -->
+		<div class="hb-page-title simple-title dark-text alignleft">
+			<h1 class="">Propulsion System for Autonomous Boat			</h1>
+
+											</div>
+		<!-- END .hb-page-title -->
+
+		    	<!-- BEGIN BREADCRUMBS -->
+    	<div class="breadcrumbs-wrapper">
+        <div class="breadcrumbs-inside">
+    	 <a href="https://angusadventures.com">Home</a> <span class="sep-icon"><i class="icon-angle-right"></i></span> <a href="https://angusadventures.com/category/autonomous-boat/">Autonomous Boat</a> <span class="sep-icon"><i class="icon-angle-right"></i></span> <span>Propulsion System for Autonomous Boat</span>      </div>
+    	</div>
+    	<!-- END BREADCRUMBS -->
+    	
+    	<div class="clear"></div>
+    	
+	</div>
+</div>
+<!-- END #hb-page-title -->
+			
+
+<!-- BEGIN #slider-section -->
+<div id="slider-section" class="clearfix " style="">
+			<canvas id="hb-canvas-effect"></canvas>
+	</div>
+<!-- END #slider-section -->		<!-- BEGIN #main-content -->
+<div id="main-content">
+	<div class="container">
+
+	
+	<div class="row right-sidebar main-row">
+	
+				
+		<!-- BEGIN .hb-main-content -->
+					<div class="col-9 hb-equal-col-height hb-main-content">
+					<!-- BEGIN #single-blog-wrapper -->
+			<div class="single-blog-wrapper clearfix">
+				<!-- BEGIN .hentry -->
+				<article id="post-7481" class="-post-format single post-7481 post type-post status-publish format-standard has-post-thumbnail hentry category-autonomous-boat tag-autonomous-boat" itemscope itemType="http://schema.org/BlogPosting">
+									<div class="featured-image">
+			<a data-title="Propulsion System for Autonomous Boat" href="https://angusadventures.com/wp-content/uploads/2017/11/IMG_0745.jpg" rel="prettyPhoto">
+				<img itemprop="image" src="https://angusadventures.com/wp-content/uploads/2017/11/IMG_0745-832x350.jpg" alt="Propulsion System for Autonomous Boat" title="Propulsion System for Autonomous Boat"/>
+				<div class="item-overlay"></div>
+				<div class="item-overlay-text">
+					<div class="item-overlay-text-wrap">
+						<span class="plus-sign"></span>
+					</div>
+				</div>
+			</a>
+		</div>
+				
+					<!-- BEGIN .single-post-content -->
+					<div class="single-post-content">
+	
+							
+						<!-- BEGIN .post-header -->
+						<div class="post-header">
+							<h1 class="title entry-title" itemprop="headline">Propulsion System for Autonomous Boat</h1>
+
+							<!-- BEGIN .post-meta-info -->
+							<div class="post-meta-info">
+								<span class="blog-author minor-meta">
+																		<span class="post-date date updated"><time datetime="2017-11-20T13:17:53-07:00" itemprop="datePublished">Nov 20, 2017</time></span>
+																		
+																		<span class="text-sep">|</span>
+									
+																		Posted by									<span class="entry-author-link" itemprop="name">
+										<span class="vcard author">
+											<span class="fn">
+												<a href="https://angusadventures.com/author/julie/" title="Posts by Julie" rel="author">Julie</a>
+											</span>
+										</span>
+									</span>
+																	</span>
+																<span class="text-sep">|</span>
+								
+																	<!-- Category info -->
+									<span class="blog-categories minor-meta"> 
+																			<a href="https://angusadventures.com/category/autonomous-boat/" title="View all posts in Autonomous Boat">Autonomous Boat</a>			
+																		<span class="text-sep">|</span>
+								
+																<span class="comment-container minor-meta">
+									<a href="https://angusadventures.com/propulsion-system-for-autonomous-boat/#comments" class="comments-link scroll-to-comments" title="Comment on Propulsion System for Autonomous Boat">
+										0 comments 
+									</a>
+								</span>
+								<span class="text-sep">|</span>
+															</div>
+							<!-- END .post-meta-info -->
+
+						</div>
+						<!-- END .post-header -->
+												
+												<!-- BEGIN .entry-content -->
+						<div class="entry-content clearfix" itemprop="articleBody">
+							<p>As we proceed with building various aspects of the autonomous boat, we will share the details here. This week, we are moving forward with the electric drive system, which is detailed here.  You can also watch the video below to hear Colin describe our prototype pod motor.</p>
+<p><iframe src="https://www.youtube.com/embed/j1ut1ii92xc" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p>&nbsp;</p>
+<p>There are two primary ways of driving a boat propeller using an electric motor.</p>
+<h3>Pod Motor</h3>
+<p><a href="https://angusadventures.com/wp-content/uploads/2017/11/pod-motor.png"><img class="alignright size-full wp-image-7484" src="https://angusadventures.com/wp-content/uploads/2017/11/pod-motor.png" alt="" width="217" height="164" /></a>This method involves having the motor (and reduction gear if used) encapsulated in a waterproof pod which is fully immersed in the water.  A waterproof seal around the drive shaft prevents water from leaking into the pod at this location.  This is how typical electric trolling motors are configured.</p>
+<p>The structure supporting the pod can be foil shaped to minimize drag, and the wiring is run through this structure.</p>
+<h3>Through-Hull Propeller System</h3>
+<p><a href="https://angusadventures.com/wp-content/uploads/2017/11/through-hull-motor.png"><img class="alignright size-full wp-image-7486" src="https://angusadventures.com/wp-content/uploads/2017/11/through-hull-motor.png" alt="" width="497" height="136" srcset="https://angusadventures.com/wp-content/uploads/2017/11/through-hull-motor.png 497w, https://angusadventures.com/wp-content/uploads/2017/11/through-hull-motor-300x82.png 300w" sizes="(max-width: 497px) 100vw, 497px" /></a>This system involves having the motor (and reduction gear if used) situated inside the hull.  The drive shaft runs through the hull (with a seal at this location), and an outer support stabilizes the shaft.</p>
+<p>&nbsp;</p>
+<h2>A Comparison of the Systems</h2>
+<p>The electric pod motor has the advantage of less hydrodynamic resistance.  With the through-hull setup, it is difficult to create a fairing around the exposed prop shaft, so this is an area vulnerable to turbulence.  Additionally, the section of shaft spinning in water is exposed greater friction than when spinning in air, adding further friction to the system.  On the other hand, it is easier to shape all components of the pod system to reduce turbulence.</p>
+<p>Additionally, for maximum performance the propeller should be aligned so the thrust is parallel to the vessel.  Unlike the pod system, the through-hull shaft must be angled, further reducing efficiency.  It is possible to use a flexible shaft, however, this presents additional challenges, such as the potential for metal fatigue and shaft seal issues.</p>
+<p>Another benefit of the pod system is the motor is fully protected (unless the shaft seal fails) from water immersion.  With the through-hull system, the motor is more vulnerable.  If a small bit of water enters the main hull (which is more likely than the pod seal failing) the motor is very vulnerable.  It could be protected with a waterproof casing; however, this would require a second shaft seal adding an additional 4-5 watts of parasitic drag.</p>
+<h3>Summary</h3>
+<p>Overall, we feel that the pod drive system is superior to the through-hull drive.  It is more efficient, and provides greater motor protection.  Typical off-the-shelf trolling outboard motor systems cannot be used as they are extraordinarily inefficient (about 20% overall efficiency), using brushed motors, poorly shaped propellers, and non-hydrodynamically shaped components.  There is a huge amount of room for improvement as one German company has shown.  Torqeedo, a high performance electric outboard company, makes pod-style trolling motors with brushless motors, streamlined components and relatively efficient propellers.  Their motor/propeller systems have an overall efficiency rating of 50%, which is 250% better than the industry standard.</p>
+<p>Torqeedo motors could potentially be used, however, they are still not ideal.  The motor controller is programmed to work only with their integrated intelligent battery system, so this would need to be modified.  Additionally, the drive shaft seal is only rated to 300 hours (about 12 days running continuously).  This is likely a conservative estimate, and with the motor running at less than 25 percent capacity, it is likely that the seal would last for more than double this time, however, it is a risk.</p>
+<p>Overall, the best solution is creating a custom motor pod.  It should be possible to create an even more efficient motor than Torqeedo.  There are several aspects of the Torqueedo motor that reduce efficiency due to design parameter relating to typical customer applications (such as requiring a more robust, and not-ideally-shaped propeller), that could be improved upon.  Hydrodynamic shaping of the overall system could be significantly improved, and installing a magnetic coupler would be another means of reducing parasitic losses.</p>
+<h2>Overall Motor Pod Design</h2>
+<h3>Motor</h3>
+<p><a href="https://angusadventures.com/wp-content/uploads/2017/11/motor-pod-design.png"><img class="alignright size-full wp-image-7487" src="https://angusadventures.com/wp-content/uploads/2017/11/motor-pod-design.png" alt="" width="268" height="278" /></a>The motor will be a brushless design due to the greater efficiency (about 20 percent more efficient than brushed) and reliability.  Typically, brushless motors spin faster than brushed motors, and many have their greatest efficiency at several thousand rpm.  This is too fast for ideal propeller function.  The propeller shouldn’t be spinning faster than 1000 to 1200 rpm for decent efficiency (300 or 400 rpm with high torque is even better, however, the propeller size becomes prohibitively big, creating other problems).  One way to bring the rpm down is to use a reduction gearing system, however, this does add additional resistance, and is another potential fail point.  We will be experimenting with brushless motors with low KV ratings (rpm per volt), and will determine if a direct drive system will be satisfactory.</p>
+<h3>Pod case</h3>
+<p>The motor, motor controller, drive system, and one half of the magnetic coupler will be assembled within a supporting framework, and then inserted and affixed into a tube. One end of the tube will be sealed with a thin barrier, which will separate the two halves of the magnetic coupler.  Thrust bearings are required at each magnetic coupler, to resist the magnetic attraction.  The immersed bearings will require ceramic balls, which fair better in an immersed saltwater environment than stainless. One axial bearing (and support) will be required between the magnetic coupler and propeller. The wiring for the motor will emerge through a hole, which will be sealed with epoxy.  After the motor and drive system has been secured, the other end of the tube will be sealed making it fully watertight.  The tube will then be inserted into a faired housing</p>
+<h3>Magnetic Coupler</h3>
+<p><a href="https://angusadventures.com/wp-content/uploads/2017/11/magnetic-coupler.png"><img class="alignright size-full wp-image-7488" src="https://angusadventures.com/wp-content/uploads/2017/11/magnetic-coupler.png" alt="" width="345" height="232" srcset="https://angusadventures.com/wp-content/uploads/2017/11/magnetic-coupler.png 345w, https://angusadventures.com/wp-content/uploads/2017/11/magnetic-coupler-300x202.png 300w" sizes="(max-width: 345px) 100vw, 345px" /></a>One other element we plan to incorporate into the motor system is to use a magnetic coupler, instead of a shaft seal.  A magnetic coupler is a mechanism that conveys torque through an impervious barrier by using a series of magnets that face each other.  When one half of the coupling spins, the magnetic attraction spins the other half.  The magnetic coupler provides three advantages over a standard shaft seal: there is virtually no resistance (shaft seals usually create 4-5 watts of friction in the system), there is zero chance of the pod leaking since it can be 100% sealed, and the system will last indefinitely (unlike shaft seals, which eventually start leaking).  The main disadvantage of a magnetic coupler is it will start to slip in higher-torque applications; however, it will work well with our low-torque drive system.</p>
+<p>&nbsp;</p>
+<h2>One Motor Pod Vs Two?</h2>
+<p>We are still deciding whether to use two inline propeller pods or one single one.  From an efficiency standpoint, there is no advantage to using two.  The advantage of using two prop systems is redundancy.  If one fails, the other will be able to keep the boat moving.</p>
+<p>Overall, the decision will rely on a risk analysis of the systems – how vulnerable are the pod systems, and is there a medium-high chance of failure?  This can be determined through field and tank testing.  We will tank test trial pods continuously for a month, and extensively field test.  The two greatest dangers are mechanical malfunction and prop fouling.</p>
+<p>Running two propellers instead of one is the equivalent of four-wheel drive in a car as opposed to two.  The propellers still turn at roughly (fractionally slower, because slippage of each prop is reduced) the same speed (as a single prop system), but the torque required to turn each prop is reduced. One slight advantage of a two-prop system is smaller propellers can be used to greater efficiency, since they (individually) are not pushing the water as hard.  The main disadvantage is the extra drag created by the appendages of the second prop unit, and a more disturbed water flow for the aft propeller unit).</p>
+<h2>Propeller(s)</h2>
+<p><a href="https://angusadventures.com/wp-content/uploads/2017/11/rc-propeller.png"><img class="alignright size-full wp-image-7489" src="https://angusadventures.com/wp-content/uploads/2017/11/rc-propeller.png" alt="" width="313" height="261" srcset="https://angusadventures.com/wp-content/uploads/2017/11/rc-propeller.png 313w, https://angusadventures.com/wp-content/uploads/2017/11/rc-propeller-300x250.png 300w" sizes="(max-width: 313px) 100vw, 313px" /></a>The type of propeller used is an extremely important part of the overall efficiency.  Generally, the most effective propeller designs commercially available are for RC airplanes, rather than boats (prop efficiency is more important in airplanes than typical small boat applications).  Since the aerodynamic aspects the props are designed for is basically the same as fluid dynamics, these propellers work very well in an aquatic setting. The two main aspects of a propeller relating to application are diameter and pitch.  The diameter is a measure of the diameter of the circle made by the tips of the blades when spinning.  For a two-blade propeller, this is simply a measurement from tip to tip.  The other important measurement is the pitch.  Pitch is the measurement of how far forward the propeller will move with each revolution (assuming no slip – imagine a screw going into piece of wood).  Pitch is determined by the angle of attack – the greater the angle of attack the more the propeller will move forward with each revolution.  In reality, depending on a range of variables, the propeller will not move through the water at the rate of pitch.  We’re assuming that the prop will have about 20% slip, meaning a propeller rated with a 5” pitch, will only actually move forward about 4”.  This number will continue to be variable in the field, with headwinds, tailwinds, etc all having impact.</p>
+<p>Propellers are rated using two numbers – the first number is the diameter of the spinning circle in inches, and the second indicates the pitch (forward movement with each revolution) in inches.  We will be experimenting with various sizes, and field testing to see which gives the greatest speed/watt.  One potentially suitable propeller (after conversing with Rick Willoughby, an engineer with a specialty in high efficiency low-powered propellers) is a three bladed rc prop with a 10&#215;7 rating.  The “7” rating means it will move forward at 5.7 knots (or about 10 km/hr) (with no slippage) at 1000 rpm.</p>
+<h2>Electrical Supply</h2>
+<p>A voltage converter with 95%  efficiency will convert the voltage down from the 12 volt storage supply to a suitable 4 or 5 volts for the motors.</p>
+<h2>Motor Control System</h2>
+<p>It will be important to control the speed of the motors to make maximum use of the available power.  For a displacement boat making way through the water, the required propulsive power increases in proportion to the cube of the speed. This means if you want to double your speed, you need eight times the power.  In other words, with a limited power supply if you used all available power over one hour, or rationed the power over eight hours, you would go four times further by travelling slower for eight hours.  This means much greater efficiency will be achieved if the motors are running continuously at varying rpm, rather than running sporadically at higher speed.  A microprocessor can be programmed react to various sensors including battery voltage, solar intensity, time of day, etc to decrease or increase rpm when necessary.  At the very least, motors can be programmed to run at 80 watts at night, and 120 watts during the day.</p>
+							<div class="page-links"></div>
+						</div>
+						<!-- END .entry-content -->
+						
+						<div class="single-post-tags"><span>Tags: </span><a href="https://angusadventures.com/tag/autonomous-boat/" rel="tag">autonomous boat</a></div>
+					</div>
+					<!-- END .single-post-content -->
+				</article>
+
+								<section class="bottom-meta-section clearfix">
+										<div class="float-left comments-holder"><a href="https://angusadventures.com/propulsion-system-for-autonomous-boat/#comments" class="comments-link scroll-to-comments" title="View comments on Propulsion System for Autonomous Boat">0 Comments</a></div>
+					
+										<div class="float-right">
+					<div title="Like this post. Propulsion System for Autonomous Boat" id="like-7481" class="like-holder like-button" data-post-id="7481" data-nonce="772bab13a5"><i class="hb-moon-heart"></i><span>2</span></div>					</div>
+					
+										<div class="float-right">
+						
+
+<div class="share-holder"><i class="hb-moon-share-2"></i>Share							
+	<!-- BEGIN .hb-dropdown-box -->
+	<div class="hb-dropdown-box share-dropdown-box">
+		<ul class="blog-social-share">
+
+			            <li><a class="facebook-share" onclick="popWindow('http://www.facebook.com/sharer.php?u=https://angusadventures.com/propulsion-system-for-autonomous-boat/','Facebook','500','400');" title="Facebook" rel="tooltip" data-placement="right"><i class="hb-moon-facebook"></i></a>
+			</li>
+			
+						<li><a class="twitter-share" onclick="popWindow('http://twitter.com/share?url=https://angusadventures.com/propulsion-system-for-autonomous-boat/','Twitter','500','258')" title="Twitter" rel="tooltip" data-placement="right"><i class="hb-moon-twitter"></i></a>
+			</li>
+			
+						<li><a class="googleplus-share" onclick="popWindow('http://plus.google.com/share?url=https://angusadventures.com/propulsion-system-for-autonomous-boat/','GooglePlus','500','400')" title="Google+" rel="tooltip" data-placement="right"><i class="hb-moon-google-plus-2"></i></a>
+			</li>
+			
+						<li><a class="linkedin-share" onclick="popWindow('http://linkedin.com/shareArticle?mini=true&amp;url=https://angusadventures.com/propulsion-system-for-autonomous-boat/&amp;title=Propulsion System for Autonomous Boat','LinkedIn','500','400')" title="LinkedIn" rel="tooltip" data-placement="right"><i class="hb-moon-linkedin"></i></a>
+			</li>
+			
+									<li><a class="pinterest-share" onclick="popWindow('http://pinterest.com/pin/create/button/?url=https://angusadventures.com/propulsion-system-for-autonomous-boat/&amp;media=https://angusadventures.com/wp-content/uploads/2017/11/IMG_0745.jpg&amp;description=Angus Adventures - Propulsion System for Autonomous Boat','Pinterest','500','400')" title="Pinterest" rel="tooltip" data-placement="right"><i class="hb-moon-pinterest"></i></a></li>
+			
+						<li><a class="tumblr-share" onclick="popWindow('http://www.tumblr.com/share/link?url=https%3A%2F%2Fangusadventures.com%2Fpropulsion-system-for-autonomous-boat%2F&amp;name=Propulsion+System+for+Autonomous+Boat&amp;description=As+we+proceed+with+building+various+aspects+of+the+autonomous+boat%2C+we+will+share+the+details+here.+This+week%2C+we+are+moving+forward+with+the+electric+drive+system%2C+which+is+detailed+here.%C2%A0+You+can+also+watch+the+video+below+to+hear+Colin+describe+our+prototype+pod+motor.+%26nbsp%3B+There+are+two+primary+ways+of+driving+%5B%26hellip%3B%5D','Tumblr','500','400')" title="Tumblr" rel="tooltip" data-placement="right"><i class="hb-moon-tumblr-2"></i></a>
+			</li>
+			
+						<li><a class="vkontakte-share" onclick="popWindow('http://vkontakte.ru/share.php?url=https://angusadventures.com/propulsion-system-for-autonomous-boat/','VKontakte','500','400')" title="VKontakte" rel="tooltip" data-placement="right"><i class="icon-vk"></i></a>
+			</li>
+			
+						<li><a class="reddit-share" onclick="popWindow('http://reddit.com/submit?url=https://angusadventures.com/propulsion-system-for-autonomous-boat/&amp;title=Propulsion System for Autonomous Boat','Reddit','500','400')" title="Reddit" rel="tooltip" data-placement="right"><i class="hb-moon-reddit"></i></a>
+			</li>
+			
+						<li><a class="email-share" href="mailto:?subject=Angus Adventures - Propulsion System for Autonomous Boat&amp;body=https://angusadventures.com/propulsion-system-for-autonomous-boat/" target="_blank" title="Email" rel="tooltip" data-placement="right"><i class="hb-moon-envelop"></i></a></li>
+					</ul>
+
+	</div>
+	<!-- END .hb-dropdown-box -->
+
+</div>					</div>
+					<!-- END .float-right -->
+									</section>
+				
+				<section class="hb-related-posts clearfix">
+
+		<h4 class="semi-bold aligncenter">You also might be interested in</h4>
+						
+	<div class="row">
+	
+		<!-- BEGIN .related-item -->
+		<div class="col-4 related-item">
+						<div class="featured-image">
+					<a href="https://angusadventures.com/redesigning-the-autonomous-boat-motor/">
+						<img alt="Redesigning the Autonomous Boat Motor" title="Redesigning the Autonomous Boat Motor" src="https://angusadventures.com/wp-content/uploads/2018/03/IMG_1329-300x200.jpg">
+						<div class="item-overlay"></div>
+						<div class="item-overlay-text">
+						<div class="item-overlay-text-wrap">
+								<span class="plus-sign"></span>
+							</div>
+						</div>
+					</a>
+				</div>
+		
+		<!-- BEGIN .post-content -->
+		<div class="post-content">
+
+			<!-- BEGIN .post-header -->
+			<div class="post-header clearfix">
+				<h2 class="title entry-title"> <a href="https://angusadventures.com/redesigning-the-autonomous-boat-motor/">Redesigning the Autonomous Boat Motor</a></h2>
+				<div class="post-meta-info">
+					<time class="date-container minor-meta updated date float-left" itemprop="datePublished" datetime="2018-03-05T16:26:46-07:00">Mar 5, 2018</time>
+				</div>
+			</div>
+			<!-- END .post-header -->
+
+			<p class="hb-post-excerpt clearfix">
+				Things have been busy these days as we race against[...]			</p>
+
+		</div>
+		<!-- END .post-content -->
+		
+		</div>
+		<!-- END .related-item -->
+
+	
+		<!-- BEGIN .related-item -->
+		<div class="col-4 related-item">
+						<div class="featured-image">
+					<a href="https://angusadventures.com/autonomous-boat-featured-in-todays-times-colonist/">
+						<img alt="Autonomous Boat featured in today&#8217;s Times Colonist" title="Autonomous Boat featured in today&#8217;s Times Colonist" src="https://angusadventures.com/wp-content/uploads/2017/12/TC_dec7_crop-300x200.jpg">
+						<div class="item-overlay"></div>
+						<div class="item-overlay-text">
+						<div class="item-overlay-text-wrap">
+								<span class="plus-sign"></span>
+							</div>
+						</div>
+					</a>
+				</div>
+		
+		<!-- BEGIN .post-content -->
+		<div class="post-content">
+
+			<!-- BEGIN .post-header -->
+			<div class="post-header clearfix">
+				<h2 class="title entry-title"> <a href="https://angusadventures.com/autonomous-boat-featured-in-todays-times-colonist/">Autonomous Boat featured in today&#8217;s Times Colonist</a></h2>
+				<div class="post-meta-info">
+					<time class="date-container minor-meta updated date float-left" itemprop="datePublished" datetime="2017-12-07T09:41:29-07:00">Dec 7, 2017</time>
+				</div>
+			</div>
+			<!-- END .post-header -->
+
+			<p class="hb-post-excerpt clearfix">
+				Our Autonomous Atlantic Crossing is featured in today's Times Colonist. [...]			</p>
+
+		</div>
+		<!-- END .post-content -->
+		
+		</div>
+		<!-- END .related-item -->
+
+	
+		<!-- BEGIN .related-item -->
+		<div class="col-4 related-item">
+						<div class="featured-image">
+					<a href="https://angusadventures.com/victoria-news-interview/">
+						<img alt="Victoria News Interview" title="Victoria News Interview" src="https://angusadventures.com/wp-content/uploads/2017/10/9030484_web1_copy_171020Droneboat-003-1200x800-300x200.jpg">
+						<div class="item-overlay"></div>
+						<div class="item-overlay-text">
+						<div class="item-overlay-text-wrap">
+								<span class="plus-sign"></span>
+							</div>
+						</div>
+					</a>
+				</div>
+		
+		<!-- BEGIN .post-content -->
+		<div class="post-content">
+
+			<!-- BEGIN .post-header -->
+			<div class="post-header clearfix">
+				<h2 class="title entry-title"> <a href="https://angusadventures.com/victoria-news-interview/">Victoria News Interview</a></h2>
+				<div class="post-meta-info">
+					<time class="date-container minor-meta updated date float-left" itemprop="datePublished" datetime="2017-10-23T13:15:51-07:00">Oct 23, 2017</time>
+				</div>
+			</div>
+			<!-- END .post-header -->
+
+			<p class="hb-post-excerpt clearfix">
+				Read the Victoria News Interview below or on their website.[...]			</p>
+
+		</div>
+		<!-- END .post-content -->
+		
+		</div>
+		<!-- END .related-item -->
+
+		</div>
+</section>
+<div class="hb-separator-extra"></div>
+
+			</div>
+			<!-- END #single-blog-wrapper -->
+			
+<!-- You can start editing here. -->
+
+
+			<!-- If comments are open, but there are no comments. -->
+
+	 
+  
+
+
+    
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply<h5 class="aligncenter">Your email is safe with us.</h5> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/propulsion-system-for-autonomous-boat/#respond" style="display:none;">Cancel Reply</a></small></h3>			<form action="https://angusadventures.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-form-author"><input id="author" name="author" type="text" placeholder="Your real name *" value="" size="30" tabindex="107" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><input id="email" name="email" type="email" placeholder="Your email address *" value="" size="40"  tabindex="108" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><input id="url" placeholder="Your website URL" name="url" type="text" value="" tabindex="109" size="30" maxlength="200"></p>
+<p class="comment-form-comment"><textarea id="comment" tabindex="110" name="comment" cols="45" placeholder="Your comment *" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><div class="clearfix"></div><p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent">Save my name and email in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit Comment" /> <input type='hidden' name='comment_post_ID' value='7481' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8f6e72acdd" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="163"/></p>			</form>
+			</div><!-- #respond -->
+	
+		</div>
+		<!-- END .hb-main-content -->
+					<!-- BEGIN .hb-sidebar -->
+			<div class="col-3  hb-equal-col-height hb-sidebar">
+			<div id="hb_soc_net_widget-3" class="widget-item hb-socials-widget"><h4>Find us on</h4>
+		<ul class="social-icons dark normal clearfix">
+                                                    <li class="facebook">
+                        <a href="http://facebook.com/angusadventures" original-title="Facebook" target="_blank">
+                        	<i class="hb-moon-facebook"></i>
+                        	<i class="hb-moon-facebook"></i>
+                        </a> 
+                    </li>
+                                                            <li class="youtube">
+                        <a href="https://www.youtube.com/user/angusadventures" original-title="Youtube" target="_blank">
+                        	<i class="hb-moon-youtube"></i>
+                        	<i class="hb-moon-youtube"></i>
+                        </a> 
+                    </li>
+                                                            <li class="twitter">
+                        <a href="https://twitter.com/angusadventures" original-title="Twitter" target="_blank">
+                        	<i class="hb-moon-twitter"></i>
+                        	<i class="hb-moon-twitter"></i>
+                        </a> 
+                    </li>
+                                                            <li class="flickr">
+                        <a href="https://www.flickr.com/photos/angusadventures/sets/" original-title="Flickr" target="_blank">
+                        	<i class="hb-moon-flickr"></i>
+                        	<i class="hb-moon-flickr"></i>
+                        </a> 
+                    </li>
+                            
+		</ul>
+
+		</div><div id="text-14" class="widget-item widget_text"><h4>Subscribe to Our Newsletter</h4>			<div class="textwidget"><!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//angusadventures.us13.list-manage.com/subscribe/post?u=fccb8d6c4d745590b813b71a7&amp;id=8bd7137aad" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div class="mc-field-group">
+	<label for="mce-FNAME">First Name </label>
+	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_fccb8d6c4d745590b813b71a7_8bd7137aad" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup--></div>
+		</div><div id="search-3" class="widget-item widget_search"><h4>search our site</h4>
+<form role="search" method="get" id="searchform" class="searchform" action="https://angusadventures.com/">
+	<input type="text" placeholder="Enter keywords" name="s" id="s" autocomplete="off">
+	<input type="submit" id="searchsubmit" class="no-three-d" value="">
+</form></div><div id="categories-6" class="widget-item widget_categories"><h4>Categories</h4>		<ul>
+				<li class="cat-item cat-item-308"><a href="https://angusadventures.com/category/autonomous-boat/">Autonomous Boat</a>
+</li>
+	<li class="cat-item cat-item-153"><a href="https://angusadventures.com/category/boat-design/">Boat Design</a>
+</li>
+	<li class="cat-item cat-item-296"><a href="https://angusadventures.com/category/book-excerpt/">Book Excerpt</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="https://angusadventures.com/category/events/">Events</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="https://angusadventures.com/category/featured-expeditions/">Featured Expeditions</a>
+</li>
+	<li class="cat-item cat-item-274"><a href="https://angusadventures.com/category/insights-musings/">Insights &amp; Musings</a>
+</li>
+	<li class="cat-item cat-item-313"><a href="https://angusadventures.com/category/keynote-speaking/">Keynote Speaking</a>
+</li>
+	<li class="cat-item cat-item-273"><a href="https://angusadventures.com/category/media/">Media</a>
+</li>
+	<li class="cat-item cat-item-151"><a href="https://angusadventures.com/category/olive-odyssey-expedition/">Olive Odyssey Expedition</a>
+</li>
+	<li class="cat-item cat-item-201"><a href="https://angusadventures.com/category/r2ak/">Race to Alaska (R2AK)</a>
+</li>
+	<li class="cat-item cat-item-294"><a href="https://angusadventures.com/category/rowed-trip-expedition/">Rowed Trip Expedition</a>
+</li>
+	<li class="cat-item cat-item-277"><a href="https://angusadventures.com/category/syrian-refugee-sponsorship/">Syrian Refugee Sponsorship</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://angusadventures.com/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="https://angusadventures.com/category/updates/">Updates</a>
+</li>
+	<li class="cat-item cat-item-152"><a href="https://angusadventures.com/category/vancouver-island-circumnavigation/">Vancouver Island Circumnavigation</a>
+</li>
+	<li class="cat-item cat-item-165"><a href="https://angusadventures.com/category/yukon-river-row/">Yukon River Row</a>
+</li>
+		</ul>
+			</div><div id="tag_cloud-2" class="widget-item widget_tag_cloud"><h4>Tags</h4><div class="tagcloud"><a href="https://angusadventures.com/tag/amazon-river/" class="tag-cloud-link tag-link-25 tag-link-position-1" style="font-size: 14.026490066225pt;" aria-label="amazon river (8 items)">amazon river</a>
+<a href="https://angusadventures.com/tag/autonomous-boat/" class="tag-cloud-link tag-link-309 tag-link-position-2" style="font-size: 16.158940397351pt;" aria-label="autonomous boat (14 items)">autonomous boat</a>
+<a href="https://angusadventures.com/tag/boat-plans-and-kits/" class="tag-cloud-link tag-link-38 tag-link-position-3" style="font-size: 11.708609271523pt;" aria-label="boat plans and kits (4 items)">boat plans and kits</a>
+<a href="https://angusadventures.com/tag/book/" class="tag-cloud-link tag-link-286 tag-link-position-4" style="font-size: 14.860927152318pt;" aria-label="book (10 items)">book</a>
+<a href="https://angusadventures.com/tag/canoing/" class="tag-cloud-link tag-link-291 tag-link-position-5" style="font-size: 8pt;" aria-label="canoing (1 item)">canoing</a>
+<a href="https://angusadventures.com/tag/cycling/" class="tag-cloud-link tag-link-47 tag-link-position-6" style="font-size: 14.490066225166pt;" aria-label="cycling (9 items)">cycling</a>
+<a href="https://angusadventures.com/tag/documentary/" class="tag-cloud-link tag-link-66 tag-link-position-7" style="font-size: 19.403973509934pt;" aria-label="documentary (33 items)">documentary</a>
+<a href="https://angusadventures.com/tag/education/" class="tag-cloud-link tag-link-311 tag-link-position-8" style="font-size: 8pt;" aria-label="education (1 item)">education</a>
+<a href="https://angusadventures.com/tag/environment/" class="tag-cloud-link tag-link-161 tag-link-position-9" style="font-size: 9.6688741721854pt;" aria-label="environment (2 items)">environment</a>
+<a href="https://angusadventures.com/tag/expeditions/" class="tag-cloud-link tag-link-276 tag-link-position-10" style="font-size: 22pt;" aria-label="expeditions (64 items)">expeditions</a>
+<a href="https://angusadventures.com/tag/insights/" class="tag-cloud-link tag-link-275 tag-link-position-11" style="font-size: 14.026490066225pt;" aria-label="insights (8 items)">insights</a>
+<a href="https://angusadventures.com/tag/kayaking/" class="tag-cloud-link tag-link-290 tag-link-position-12" style="font-size: 9.6688741721854pt;" aria-label="kayaking (2 items)">kayaking</a>
+<a href="https://angusadventures.com/tag/media/" class="tag-cloud-link tag-link-272 tag-link-position-13" style="font-size: 16.900662251656pt;" aria-label="media (17 items)">media</a>
+<a href="https://angusadventures.com/tag/motivational-speaking/" class="tag-cloud-link tag-link-306 tag-link-position-14" style="font-size: 11.708609271523pt;" aria-label="motivational speaking (4 items)">motivational speaking</a>
+<a href="https://angusadventures.com/tag/newsletter/" class="tag-cloud-link tag-link-270 tag-link-position-15" style="font-size: 19.867549668874pt;" aria-label="newsletter (37 items)">newsletter</a>
+<a href="https://angusadventures.com/tag/olive-odyssey/" class="tag-cloud-link tag-link-98 tag-link-position-16" style="font-size: 17.271523178808pt;" aria-label="olive odyssey (19 items)">olive odyssey</a>
+<a href="https://angusadventures.com/tag/olive-oil/" class="tag-cloud-link tag-link-99 tag-link-position-17" style="font-size: 15.509933774834pt;" aria-label="olive oil (12 items)">olive oil</a>
+<a href="https://angusadventures.com/tag/public-events/" class="tag-cloud-link tag-link-284 tag-link-position-18" style="font-size: 21.165562913907pt;" aria-label="public events (51 items)">public events</a>
+<a href="https://angusadventures.com/tag/r2ak/" class="tag-cloud-link tag-link-271 tag-link-position-19" style="font-size: 16.622516556291pt;" aria-label="R2AK (16 items)">R2AK</a>
+<a href="https://angusadventures.com/tag/refugee-sponsorship/" class="tag-cloud-link tag-link-282 tag-link-position-20" style="font-size: 10.781456953642pt;" aria-label="refugee sponsorship (3 items)">refugee sponsorship</a>
+<a href="https://angusadventures.com/tag/rowed-trip/" class="tag-cloud-link tag-link-120 tag-link-position-21" style="font-size: 19.218543046358pt;" aria-label="rowed trip expedition (31 items)">rowed trip expedition</a>
+<a href="https://angusadventures.com/tag/rowing/" class="tag-cloud-link tag-link-122 tag-link-position-22" style="font-size: 22pt;" aria-label="rowing (64 items)">rowing</a>
+<a href="https://angusadventures.com/tag/sailing/" class="tag-cloud-link tag-link-125 tag-link-position-23" style="font-size: 19.033112582781pt;" aria-label="sailing (30 items)">sailing</a>
+<a href="https://angusadventures.com/tag/syria/" class="tag-cloud-link tag-link-177 tag-link-position-24" style="font-size: 14.026490066225pt;" aria-label="syria (8 items)">syria</a>
+<a href="https://angusadventures.com/tag/travelling-with-kids/" class="tag-cloud-link tag-link-283 tag-link-position-25" style="font-size: 11.708609271523pt;" aria-label="travelling with kids (4 items)">travelling with kids</a>
+<a href="https://angusadventures.com/tag/trekking/" class="tag-cloud-link tag-link-289 tag-link-position-26" style="font-size: 15.509933774834pt;" aria-label="trekking (12 items)">trekking</a>
+<a href="https://angusadventures.com/tag/vancouver-island/" class="tag-cloud-link tag-link-288 tag-link-position-27" style="font-size: 19.403973509934pt;" aria-label="vancouver island (33 items)">vancouver island</a>
+<a href="https://angusadventures.com/tag/yukon-river/" class="tag-cloud-link tag-link-168 tag-link-position-28" style="font-size: 13.562913907285pt;" aria-label="yukon river (7 items)">yukon river</a></div>
+</div><div id="hb_portfolio_widget-3" class="widget-item portfolio-widget"><h4>In the Media</h4><div class="hb-stream columns-3 clearfix" id="unique_id_32655"><ul><li><a href="https://angusadventures.com/portfolio/pacific-yachting/" title="Pacific Yachting" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2018/06/PacificYachtingJune2018cropped-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/canada-am-interview-with-julie-angus/" title="Canada AM" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/canadaAM-julie-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/daily-planet-2/" title="Daily Planet" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/daily_planet_rowedtrip-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/boys-life/" title="Boy&#8217;s Life" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/Screen-Shot-2017-02-22-at-3.45.04-PM-250x250.png" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/bc-magazine/" title="BC Magazine" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2010/07/BCmagColin2-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/wall-street-journal/" title="Wall Street Journal" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/WSJphoto-1-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/vancouver-sun/" title="Vancouver Sun" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/Screen-Shot-2017-02-21-at-8.59.31-AM-250x250.png" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/vancouver-sun-2/" title="Vancouver Sun" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/vansun2015feature-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/canadian-geographic-2/" title="Canadian Geographic" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/cangeo2015-feature-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/canadian-geographic/" title="Canadian Geographic" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/cangeofeature-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/daily-planet/" title="Daily Planet" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/daily-planet-lisbon-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/the-hour-with-colin-angus/" title="The Hour" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/The-hour-interview-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/globe-mail-article-by-colin/" title="Globe &#038; Mail" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2011/05/rowboat60-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/national-geographic-adventure/" title="National Geographic Adventure" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/NatGeoAdventureMagellans-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/readers-digest/" title="Reader&#8217;s Digest" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2010/06/readersdigest1-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/westjet-up/" title="Westjet Up!" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2007/03/westjet-colin-feature-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/the-tyee/" title="The Tyee" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/tyeeotherlogo-250x250.png" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/national-post/" title="National Post" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2007/05/nationalpostfeature-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/rowing-across-the-atlantic-on-cbc-sunday-news/" title="CBC Sunday News" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/CBCSundayNewsInterview-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/explore-magazine-2/" title="Explore Magazine" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/exploreadventurejobsfeatureimage-250x250.jpg" width="250" height="250" /></a></li><li><a href="https://angusadventures.com/portfolio/national-geographic-weekend/" title="National Geographic Weekend" rel="tooltip"><img src="https://angusadventures.com/wp-content/uploads/2017/02/boyd-matson-560-250x250.jpg" width="250" height="250" /></a></li></ul></div></div>			</div>
+			<!-- END .hb-sidebar -->
+		
+
+			
+
+	</div>
+		
+	</div>
+</div>
+<!-- END #main-content -->
+
+<!-- Back to Top Button -->
+<a id="to-top"><i class="hb-moon-arrow-up-4"></i></a>
+<!-- END #to-top -->
+
+<!-- BEGIN #contact-panel -->
+<aside id="contact-panel">
+    <h4 class="hb-focus-color">Contact Us</h4>
+    <p>Send us an email and we'll get back to you soon.</p>
+
+    <form id="contact-panel-form">
+        <p><input type="text" placeholder="Name" name="hb_contact_name" id="hb_contact_name_id" class="required requiredField" tabindex="33"/></p>
+        <p><input type="email" placeholder="Email" name="hb_contact_email" id="hb_contact_email_id" class="required requiredField" tabindex="34"/></p>
+        <p><input type="text" placeholder="Subject" name="hb_contact_subject" id="hb_contact_subject_id"/></p>
+        <p><textarea placeholder="Your message..." name="hb_contact_message" id="hb_contact_message_id" class="required requiredField" tabindex="35"></textarea></p>
+        <a href="#" id="hb-submit-contact-panel-form" class="hb-button no-three-d hb-push-button hb-asbestos hb-small-button">
+            <span class="hb-push-button-icon">
+                <i class="hb-moon-paper-plane"></i>
+            </span>
+            <span class="hb-push-button-text">Send Message</span>
+        </a>
+        <input type="hidden" id="success_text" value="Message Sent!"/>
+    </form>
+
+</aside>
+<!-- END #contact-panel -->
+
+<!-- BEGIN #hb-contact-button -->
+<a id="contact-button"><i class="hb-moon-envelop"></i></a>
+<!-- END #hb-contact-button -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-97001709-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- BEGIN #pre-footer-area -->
+<div id="pre-footer-area">
+    <div class="container">
+        <span class="pre-footer-text">Contact us to discover how we can deliver an energizing talk that will inspire you and your staff.</span>
+        <a href="https://angusadventures.com/book-colin-or-julie/" class="hb-button hb-large-button">Contact Us</a>    </div>
+</div>
+<!-- END #pre-footer-area -->
+<!-- BEGIN #copyright-wrapper -->
+<div id="copyright-wrapper" class="normal-copyright  clearfix"> <!-- Simple copyright opcija light style opcija-->
+
+    <!-- BEGIN .container -->
+    <div class="container">
+
+        <!-- BEGIN #copyright-text -->
+        <div id="copyright-text">
+            <p>© 2019 · Angus Adventures.
+            
+            </p>
+        </div>
+        <!-- END #copyright-text -->
+
+        <div id="footer-menu" class="clearfix"><ul id="footer-nav" class=""><li id="menu-item-5242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-5242"><a href="https://angusadventures.com/">Home</a></li>
+<li id="menu-item-5824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5824"><a href="https://angusadventures.com/team/">About</a></li>
+<li id="menu-item-5243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5243"><a href="https://angusadventures.com/contact-us/">Contact</a></li>
+</ul></div>
+    </div> 
+    <!-- END .container -->
+
+</div>
+<!-- END #copyright-wrapper -->
+	<nav class="hb-single-next-prev">
+		
+		<a href="https://angusadventures.com/global-news/" title="Global News Interview on Autonomous Atlantic Crossing" class="hb-prev-post">
+		<i class="hb-moon-arrow-left-4"></i>
+		<span class="text-inside">Prev</span>
+	</a>
+	
+		<a href="https://angusadventures.com/maritime-museums-autonomous-boat-exhibit-featured-in-shipping-news/" title="Maritime Museums' Autonomous Boat Exhibit featured in BC Shipping News" class="hb-next-post">
+		<i class="hb-moon-arrow-right-5"></i>
+		<span class="text-inside">Next</span>
+	</a>
+	
+</nav>
+<!-- END LINKS -->
+
+</div>
+<!-- END #main-wrapper -->
+
+</div>
+<!-- END #hb-wrap -->
+
+
+
+
+<!-- BEGIN #hb-modal-overlay -->
+<div id="hb-modal-overlay"></div>
+<!-- END #hb-modal-overlay -->
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/angusadventures.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.0.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/themes/HighendWP/scripts/scripts.js?ver=3.4.9.4'></script>
+<script type='text/javascript' src='//www.google.com/jsapi?ver=3.4.9.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var hb_gmap = {"1":{"lat":"48.856614","lng":"2.352222","ibx":"Enter your info here or leave it empty."}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/themes/HighendWP/scripts/map.js?ver=3.4.9.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/themes/HighendWP/scripts/mediaelement/mediaelement.js?ver=3.4.9.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/themes/HighendWP/scripts/jquery.flexslider.js?ver=3.4.9.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/themes/HighendWP/scripts/jquery.validate.js?ver=3.4.9.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/themes/HighendWP/scripts/jquery.easychart.js?ver=3.4.9.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/themes/HighendWP/scripts/responsivecarousel.min.js?ver=3.4.9.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/themes/HighendWP/scripts/jquery.owl.carousel.min.js?ver=3.4.9.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/wp-sanitize.min.js?ver=5.2.3'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/wp-a11y.min.js?ver=5.2.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-content/themes/HighendWP/scripts/jquery.custom.js?ver=3.4.9.4'></script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/comment-reply.min.js?ver=5.2.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var FB_WP=FB_WP||{};FB_WP.queue={_methods:[],flushed:false,add:function(fn){FB_WP.queue.flushed?fn():FB_WP.queue._methods.push(fn)},flush:function(){for(var fn;fn=FB_WP.queue._methods.shift();){fn()}FB_WP.queue.flushed=true}};window.fbAsyncInit=function(){FB.init({"xfbml":true,"appId":"211103699537"});if(FB_WP && FB_WP.queue && FB_WP.queue.flush){FB_WP.queue.flush()}}
+/* ]]> */
+</script>
+<script type="text/javascript">(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https:\/\/connect.facebook.net\/en_US\/all.js";fjs.parentNode.insertBefore(js,fjs)}(document,"script","facebook-jssdk"));</script>
+<script type='text/javascript' src='https://angusadventures.com/wp-includes/js/wp-embed.min.js?ver=5.2.3'></script>
+<script async="async" type='text/javascript' src='https://angusadventures.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1.2'></script>
+<div id="fb-root"></div></body>
+<!-- END body -->
+
+</html>
+<!-- END html -->

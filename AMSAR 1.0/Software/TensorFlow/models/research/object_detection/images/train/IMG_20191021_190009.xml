@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Chapstick</folder>
+	<filename>IMG_20191021_190009.jpg</filename>
+	<path>C:\Users\Mark\Desktop\Chapstick\IMG_20191021_190009.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>480</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>chapstick</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>191</xmin>
+			<ymin>154</ymin>
+			<xmax>251</xmax>
+			<ymax>241</ymax>
+		</bndbox>
+	</object>
+</annotation>
