@@ -46,7 +46,7 @@ pip install selenium
 > Note: `Raspberry Pi 4` is required for full system testing.
 
 ## Structures
-picture here
+<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/AMSAR%202.0/Structures/Screen%20Shot%202021-05-05%20at%2010.35.53%20PM.png" width="900" height="300">
 
 ## Electronics
 Main power connections are represented by solid lines, while dashed lines show connections that include data transfer. It can be assumed that all components listed in a specific sub-circuit are connected in series (with the exception of the dependent Pi_1 components).
