@@ -1,3 +1,5 @@
+![](https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/Logo.png)
+
 # UB AIAA Micro-g NExT Research Team
 NASA’s Microgravity University proposes a series of design challenges for undergraduate students on an annual basis, which directly relate to space exploration missions. During fall semester, Micro-g Neutral Buoyancy Experiment Design Teams develop and propose a tool or device which meets the requirements of their preferred challenge. NASA officials review submitted proposals and offer the opportunity for selected teams’ lead officials to test their devices in-person at the Johnson Space Center’s Neutral Buoyancy Laboratory. 
 
