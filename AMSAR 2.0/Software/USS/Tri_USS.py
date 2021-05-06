@@ -10,20 +10,20 @@ import os
 GPIO.setmode(GPIO.BOARD)
 
 # Define GPIO for ultrasonic central
-TRIGGER_CENTER = 20
-ECHO_CENTER = 24
+TRIGGER_CENTER = 38
+ECHO_CENTER = 18
 GPIO.setup(TRIGGER_CENTER, GPIO.OUT)
 GPIO.setup(ECHO_CENTER, GPIO.IN)
 
 # Define GPIO for ultrasonic Right
-TRIGGER_RIGHT = 16
-ECHO_RIGHT = 23
+TRIGGER_RIGHT = 36
+ECHO_RIGHT = 16
 GPIO.setup(TRIGGER_RIGHT, GPIO.OUT)
 GPIO.setup(ECHO_RIGHT, GPIO.IN)
 
 # Define GPIO for ultrasonic Left
-TRIGGER_LEFT = 21
-ECHO_LEFT = 12
+TRIGGER_LEFT = 40
+ECHO_LEFT = 32
 GPIO.setup(TRIGGER_LEFT, GPIO.OUT)
 GPIO.setup(ECHO_LEFT, GPIO.IN)
 
@@ -49,19 +49,19 @@ def get_distance(PIN_TRIGGER, PIN_ECHO):
 # Detect front obstacle
 def center():
     distance = get_distance(TRIGGER_CENTER,ECHO_CENTER)
-    print("Center : " + distance)
+    print("Center : " + str(distance))
     return distance
     
 
 def right():
     distance = get_distance(TRIGGER_RIGHT,ECHO_RIGHT)
-    print("Right : " + distance)
+    print("Right : " + str(distance))
     return distance
 
 
 def left():
-    distance = get_distance(TRIGGER_RIGHT,ECHO_RIGHT)
-    print("Left : " + distance)
+    distance = get_distance(TRIGGER_LEFT,ECHO_LEFT)
+    print("Left : " + str(distance))
     return distance
 
 
@@ -96,16 +96,16 @@ def avoid_left():
 def avoid_obstacle():
     start = time.time()
     while start > time.time() - 60:  # 60 seconds
-        if center() < 50:
+        if center() < 10:
             print("FRONT  Warning")
             # Stop Motor Here
             # time to stop
             avoid_front()
-        elif right() < 50:
+        elif right() < 10:
             print("RIGHT  Warning")
             # Stop Motor Here
             avoid_right()
-        elif left() < 50:
+        elif left() < 10:
             print("LEFT  Warning")
             # Stop Motor Here
             avoid_left()
@@ -113,11 +113,16 @@ def avoid_obstacle():
     
     print("EXITING")
     GPIO.cleanup()
+    
+def test():
+    while True:
+        c = center()
+       # l = left()        
 
 def main():
     print("Initializing")
     try:
-        avoid_obstacle()
+        test()
     finally:
         print("EXITING")
         GPIO.cleanup()

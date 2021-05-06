@@ -1,13 +1,15 @@
 import RPi.GPIO as GPIO
-import time
+from time import sleep
+
 
 GPIO.setwarnings(False)
-servoPIN = 37
+servoPIN = 13
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(servoPIN, GPIO.OUT)
 
 p = GPIO.PWM(servoPIN, 50) # GPIO 17 for PWM with 50Hz
 p.start(0) # Initialization
+"""
 R = False
 L = False
 c = False
@@ -45,7 +47,7 @@ try:
             servo(1,9)
            
         if move == 'c':
-            servo(1,6)
+            servo(1,9)
             p.stop()
           
             
@@ -56,22 +58,12 @@ except KeyboardInterrupt:
 
 
 """
-pwm.ChangeDutyCycle(10)
-    time.sleep(0.15)
-    pwm.ChangeDutyCycle(0)
-    time.sleep(0.15)
-    pwm.ChangeDutyCycle(5)
-    time.sleep(0.15)
-    pwm.ChangeDutyCycle(0)
 
-    time.sleep(1)
-
-    pwm.ChangeDutyCycle(5)
-    time.sleep(0.15)
-    pwm.ChangeDutyCycle(0)
-    time.sleep(0.15)
-    pwm.ChangeDutyCycle(10)
-    time.sleep(0.15)
-    pwm.ChangeDutyCycle(0)
-    time.sleep(1)
-"""
+p.ChangeDutyCycle(5) # left -90 deg position
+sleep(1)
+p.ChangeDutyCycle(7.5) # neutral position
+sleep(1)
+p.ChangeDutyCycle(10) # right +90 deg position
+sleep(1)
+p.stop()
+GPIO.cleanup()
