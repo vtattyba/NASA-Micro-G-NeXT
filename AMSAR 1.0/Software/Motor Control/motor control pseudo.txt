@@ -1,0 +1,31 @@
+
+
+class Motor: 
+	double current_speed; 		# current speed of the motor
+	
+	# function for initializing motor
+	def _init_():
+		initialize motor
+	
+	# function for changing speeds of the motor
+	def throttle(speed): 
+		current_speed = speed
+	
+	# function for putting the motor at a stop
+	def halt():
+		current_speed = 0.0
+		
+class Servo_Motor: 
+	
+	double current_angle		# current angle at which the servo motor is at. from -45 to 45
+	
+	# function for turning the servo motor left
+	def steer_left(angle):
+		set the current angle to that angle it's at when turning left
+		may need to make a loop for STEADY turning to accomodate for water pressure
+		
+	# function for turning the servo motor right
+	def steer_right(angle): 
+		set the current angle to that angle it's at when turning right
+		may need to make a loop for STEADY turning to accomodate for water pressure
+	
