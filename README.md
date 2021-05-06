@@ -1,14 +1,15 @@
 ![UB Micro-g Logo](https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/Logo.png)
 
+<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/Logo.png" width="50" height="50">
+
 # UB AIAA Micro-g NExT Research Team
 NASA’s Microgravity University proposes a series of design challenges for undergraduate students on an annual basis, which directly relate to space exploration missions. During fall semester, Micro-g Neutral Buoyancy Experiment Design Teams develop and propose a tool or device which meets the requirements of their preferred challenge. NASA officials review submitted proposals and offer the opportunity for selected teams’ lead officials to test their devices in-person at the Johnson Space Center’s Neutral Buoyancy Laboratory. 
 
 Learn More at [**UB MICROG**](https://www.ubaiaa.org/microg.html)
 
-[![alt text][1.1]][1]
-
 # AMSAR (Autonomous Maritime Search and Rescue)
 Challenge 1: Surface Autonomous Vehicle for Emergency Response (SAVER)
+
 [**Proposal**](https://www.ubaiaa.org/docs/2021.pdf)
 
 ###### Background
