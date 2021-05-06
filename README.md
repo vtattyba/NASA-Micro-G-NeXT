@@ -1,4 +1,4 @@
-<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/Logo.png" width="200" height="160">
+<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/Logo.png" width="200" height="170">
 
 # UB AIAA Micro-g NExT Research Team
 NASA’s Microgravity University proposes a series of design challenges for undergraduate students on an annual basis, which directly relate to space exploration missions. During fall semester, Micro-g Neutral Buoyancy Experiment Design Teams develop and propose a tool or device which meets the requirements of their preferred challenge. NASA officials review submitted proposals and offer the opportunity for selected teams’ lead officials to test their devices in-person at the Johnson Space Center’s Neutral Buoyancy Laboratory. 
@@ -55,6 +55,6 @@ Main power connections are represented by solid lines, while dashed lines show c
 
 # TEAM
 
-picture here
+<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/2020-2021%20Team.jpg" width="400" height="350">
 
 The Micro-G NEXT challenge team members decorated the UB bull outside the Student Union. From left are Mirka Arevalo, Sean Flynn, Jonah Bannon, Imon Tatar, Mark Ng, Ryan Hughes, Teresa Bompczyk, Tamaghan Maurya, Vladimir Tattybayev, Kevin Zheng, Liam Field and Joshua Duell.
