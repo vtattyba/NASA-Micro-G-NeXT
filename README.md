@@ -55,6 +55,6 @@ Main power connections are represented by solid lines, while dashed lines show c
 
 # TEAM
 
-<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/2020-2021%20Team.jpg" width="400" height="350">
+<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/2020-2021%20Team.jpg" width="540" height="400">
 
 The Micro-G NEXT challenge team members decorated the UB bull outside the Student Union. From left are Mirka Arevalo, Sean Flynn, Jonah Bannon, Imon Tatar, Mark Ng, Ryan Hughes, Teresa Bompczyk, Tamaghan Maurya, Vladimir Tattybayev, Kevin Zheng, Liam Field and Joshua Duell.
