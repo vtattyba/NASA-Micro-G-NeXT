@@ -1,5 +1,3 @@
-![UB Micro-g Logo](https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/Logo.png)
-
 <img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/Logo.png" width="260" height="150">
 
 # UB AIAA Micro-g NExT Research Team
