@@ -5,6 +5,8 @@ NASA’s Microgravity University proposes a series of design challenges for unde
 
 Learn More at [**UB MICROG**](https://www.ubaiaa.org/microg.html)
 
+<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/AMSAR%201.0/Media/EDCC062B-61B5-4FDE-B08B-45D953DA8902.JPEG" width="300" height="600">
+
 # AMSAR (Autonomous Maritime Search and Rescue)
 Challenge 1: Surface Autonomous Vehicle for Emergency Response (SAVER)
 
@@ -18,7 +20,7 @@ Orion as the spacecraft. In the event of an unplanned egress (launch abort, cont
 AMSAR is a fully autonomous system that must undergo multiple mission procedures in order to
 attain its goal state. Figure 4 [pp. 3] shows the System Block Diagram which defines the exact actions and states within the AMSAR system. The sensors required for mission success include the accelerometer, Kerberos SDR, motor software, TensorFlow object detection, and ultrasonic proximity detection/object avoidance.
 
-picture here
+<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/AMSAR%202.0/Software/software.png" width="500" height="500">
 
 ##### Plugins
 
@@ -49,7 +51,7 @@ picture here
 ## Electronics
 Main power connections are represented by solid lines, while dashed lines show connections that include data transfer. It can be assumed that all components listed in a specific sub-circuit are connected in series (with the exception of the dependent Pi_1 components).
 
-picture here
+<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/AMSAR%202.0/Electronics/Circuit-2.png" width="500" height="500">
 
 # TEAM
 
