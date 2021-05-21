@@ -4,7 +4,7 @@ import time, os
 class Motor():
     
     def __init__(self):
-        self.speed = 0
+        self.speed = 1000
         self.direction = 0
         
         # for motor controls (speed)
@@ -12,6 +12,7 @@ class Motor():
         os.system("sudo pigpiod")
         os.system('pigs s 5 1000')
         time.sleep(2)
+        os.system('pigs s 5 1000')
 
         # for servo (direction)
         GPIO.setwarnings(False)
@@ -22,14 +23,14 @@ class Motor():
     
     def increase_speed(self):
         self.speed += 100
-        self.speed = min(1500, self.speed)
+        self.speed = min(1800, self.speed)
         os.system('pigs s 5 ' + str(self.speed))
         print('motor speed:', self.speed)
         return
     
     def decrease_speed(self):
         self.speed -= 100        
-        self.speed = max(0, self.speed)
+        self.speed = max(1000, self.speed)
         os.system('pigs s 5 ' + str(self.speed))
         print('motor speed:', self.speed)
         return
@@ -64,7 +65,7 @@ class Motor():
         return
     
     def __servo__(self, sleep, cycle):
-        p = GPIO.PWM(37, 50)
+        p = GPIO.PWM(13, 50)
         p.start(0)
         p.ChangeDutyCycle(cycle)
         time.sleep(sleep)
