@@ -1,4 +1,4 @@
-from pyPS4Controller.controller import Controller
+from imports.pyPS4Controller.controller import Controller
 """
 sudo bluetoothctl
 agent on

@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import pygame
 import os
-from pyPS4Controller.controller import Controller
+from imports.pyPS4Controller.controller import Controller
 
 #os.system("sudo pigpiod")
 """
@@ -17,13 +17,13 @@ scan on
 connect [address]
 
 trust [address]
-"""
+
 
 def servo (cycle):
     p.ChangeDutyCycle(cycle)
     time.sleep(0.05)
     return
-
+"""
 def connect():
     # any code you want to run during initial connection with the controller
     pass
@@ -47,8 +47,8 @@ class MyController(Controller):
     def on_share_press(self):
        print("Mode CHange")
 
-	def on_options_press(self):
-	       print("KILL EVERYTHING")
+    def on_options_press(self):
+       print("KILL EVERYTHING")
 
 
 

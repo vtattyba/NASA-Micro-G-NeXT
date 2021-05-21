@@ -137,7 +137,7 @@ while(True):
         line_thickness=8,
         min_score_thresh=0.60)
     
-   #Middle Box
+    #Middle Box
     cv2.rectangle(frame,TL_middle,BR_middle,(20,20,255),3)
     cv2.putText(frame,"C",(TL_middle[0],TL_middle[1]-10),font,1,(20,255,255),1,cv2.LINE_AA)
     #Left Box
