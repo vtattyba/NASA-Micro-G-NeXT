@@ -1,56 +1,15 @@
-import os
-import struct
-import time
+import os, struct, time
+import numpy as np
+
+from Object_Detection.object_detection import Detector
+from Motor_Controls.motor import Motor
 
 
-class Actions:
-    """
-    Actions are inherited in the Controller class.
-    In order to bind to the controller events, subclass the Controller class and
-    override desired action events in this class.
-    """
-    def __init__(self):
-        return
+class Runner():
 
-    def on_up_arrow_press(self):
-        print("on_up_arrow_press")
-
-    def on_down_arrow_press(self):
-        print("on_down_arrow_press")
-
-    def on_left_arrow_press(self):
-        print("on_left_arrow_press")
-
-    def on_left_right_arrow_release(self):
-        print("on_left_right_arrow_release")
-
-    def on_right_arrow_press(self):
-        print("on_right_arrow_press")
-
-    def on_options_press(self):
-        print("on_options_press")
-
-    def on_share_press(self):
-        """this event is only detected when connecting without ds4drv"""
-        print("on_share_press")
-
-
-class Controller(Actions):
-
-    def __init__(
-            self, interface, connecting_using_ds4drv=True,
-            event_definition=None, event_format=None
-                ):
-        """
-        Initiate controller instance that is capable of listening to all events on specified input interface
-        :param interface: STRING aka /dev/input/js0 or any other PS4 Duelshock controller interface.
-                          You can see all available interfaces with a command "ls -la /dev/input/"
-        :param connecting_using_ds4drv: BOOLEAN. If you are connecting your controller using ds4drv, then leave it set
-                                                 to True. Otherwise if you are connecting directly via directly via
-                                                 bluetooth/bluetoothctl, set it to False otherwise the controller
-                                                 button mapping will be off.
-        """
-        Actions.__init__(self)
+    def __init__(self, interface, connecting_using_ds4drv=True, event_definition=None, event_format=None):
+        self.manual = True
+        # controller initializaiton
         self.stop = False
         self.is_connected = False
         self.interface = interface
@@ -75,7 +34,58 @@ class Controller(Actions):
 
         self.event_size = struct.calcsize(self.event_format)
         self.event_history = []
+        
+        # tensorflow initialization
+        self.obj = False
+        self.detector = Detector(use_TPU=True)
+        
+        # init uss
+        self.uss = [False, False, False]
+        # TODO - initialize USS
+        
+        self.motor = Motor()
 
+    # increase speed of motor 
+    def on_up_arrow_press(self):
+        if self.manual:
+            self.motor.increase_speed()
+
+    # decrease speed of motor 
+    def on_down_arrow_press(self):
+        if self.manual:
+            self.motor.decrease_speed()
+
+    # turn servo left
+    def on_left_arrow_press(self):
+        if self.manual:
+            self.motor.turn_left()
+
+    # turn servo straight when button is released
+    def on_left_right_arrow_release(self):
+        if self.manual:
+            self.motor.turn_straight()
+        return
+
+    # turn servo right
+    def on_right_arrow_press(self):
+        if self.manual:
+            self.motor.turn_right()
+        return
+    
+    # quit the program
+    def on_options_press(self):
+        print('shutting down...')
+        self.motor.stop()
+        self.motor.quit()
+        exit(0)
+    
+    # change modes
+    def on_share_press(self):
+        self.manual = not self.manual
+        print('manual mode:', self.manual)
+        self.__loop__()
+        return
+    
     def listen(self, timeout=30, on_connect=None, on_disconnect=None, on_sequence=None):
         """
         Start listening for events on a given self.interface
@@ -178,3 +188,8 @@ class Controller(Actions):
         elif event.share_pressed():
             self.event_history.append("share")
             self.on_share_press()
+
+runner = Runner(interface='/dev/input/js0', connecting_using_ds4drv=False)
+runner.listen()
+
+

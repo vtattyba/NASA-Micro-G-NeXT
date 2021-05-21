@@ -1,17 +1,18 @@
+import _thread as thread
 import numpy as np
-
-# for manual controls 
-#from Remote_Controller.imports.pyPS4Controller.controller import Controller
-from Remote_Controller.imports.pyPS4Controller.custcontroller import Controller
 
 from Object_Detection.object_detection import Detector
 from Motor_Controls.motor import Motor
+from Remote_Controller.controller import Controller
 
 class Runner(Controller):
+
+    def __init__(self):
+        # init controls for manual mode
+        self.manual = True
+        Controller.__init__(self)
         
-        
-    def __init__(self, **kwargs):        
-        # init tf lite
+        # tensorflow initialization
         self.obj = False
         self.detector = Detector(use_TPU=False)
         
@@ -19,64 +20,69 @@ class Runner(Controller):
         self.uss = [False, False, False]
         # TODO - initialize USS
         
+        # init motor
         self.motor = Motor()
         
-        # init controller
-        Controller.__init__(self, **kwargs)
-        self.manual = True
+        # init sdr
+        # TODO - init sdr
         
-        self.listen()
+        self.loop()
         
-        return
-
-    # function that switches between autonomous/manual mode
-    def on_share_press(self):
-        self.manual = not self.manual                # switch modes
-        print('manual:', self.manual)
-        if not self.manual:                          # if it's autonomous mode, 
-            self.__autonomous__()
+    def autonomous(self):
+        while not self.manual:
+            self.obj = self.detector.check_tf()
+            print(self.obj)
         return
     
-    # increase motor speed (manually)
+    def loop(self):
+        while True:
+            self.listen_for_controller()
+        return
+        
+    # increase speed of motor 
     def on_up_arrow_press(self):
         if self.manual:
             self.motor.increase_speed()
-        return
-    
-    # decrease motor speed (manually)
+
+    # decrease speed of motor 
     def on_down_arrow_press(self):
         if self.manual:
             self.motor.decrease_speed()
-        return
-    
+
+    # turn servo left
     def on_left_arrow_press(self):
         if self.manual:
             self.motor.turn_left()
-        return
-    
-    def on_right_arrow_press(self):
-        if self.manual:
-            self.motor.turn_right()
-        return
-        
+
+    # turn servo straight when button is released
     def on_left_right_arrow_release(self):
         if self.manual:
             self.motor.turn_straight()
         return
+
+    # turn servo right
+    def on_right_arrow_press(self):
+        if self.manual:
+            self.motor.turn_right()
+        return
     
+    # quit the program
     def on_options_press(self):
         print('shutting down...')
         self.motor.stop()
-        
+        self.motor.quit()
+        exit(0)
     
-    def __autonomous__(self):
-        print('autonomous mode...')
-        # a bunch of if statements on conditions
-        done = False
-        while not done:
-            self.obj = self.detector.check_tf()
-                
-        self.motor = 0
-        return 
+    # change modes
+    def on_share_press(self):
+        self.manual = not self.manual
+        print('manual mode:', self.manual)
+        self.motor.stop()
+        
+        if not self.manual:
+            thread.start_new_thread(self.autonomous, ())
+        return
 
-runner = Runner(interface='/dev/input/js0', connecting_using_ds4drv=False)
+runner = Runner()
+
+runner.loop()

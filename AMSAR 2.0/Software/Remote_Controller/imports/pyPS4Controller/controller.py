@@ -258,6 +258,8 @@ class Controller(Actions):
             special_inputs_indexes = [0] * len(on_sequence)
             while not self.stop and event:
                 (overflow, value, button_type, button_id) = unpack()
+                print(event)
+                
                 if button_id not in self.black_listed_buttons:
                     self.__handle_event(button_id=button_id, button_type=button_type, value=value, overflow=overflow,
                                         debug=self.debug)
@@ -267,6 +269,7 @@ class Controller(Actions):
                         special_inputs_indexes[i] = check[0] + 1
                         special_input["callback"]()
                 event = read_events()
+                print('tg')
         except KeyboardInterrupt:
             print("\nExiting (Ctrl + C)")
             on_disconnect_callback()

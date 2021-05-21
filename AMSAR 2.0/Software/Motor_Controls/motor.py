@@ -55,6 +55,7 @@ class Motor():
     
     def stop(self):
         os.system('pigs s 5 1000')
+        self.__servo__(0.1, 6)
         print('HALTED.')
         return
     
@@ -62,6 +63,11 @@ class Motor():
         os.system('pigs s 5 1000')
         os.system('pigs s 5 0')
         os.system('sudo killall pigpiod')
+        
+        self.__servo__(0.1, 6)
+        GPIO.cleanup()
+        
+        print('EXITING SYSTEM.')
         return
     
     def __servo__(self, sleep, cycle):
@@ -70,6 +76,4 @@ class Motor():
         p.ChangeDutyCycle(cycle)
         time.sleep(sleep)
         p.stop()
-
-        GPIO.cleanup()
         return
