@@ -21,7 +21,6 @@ class Runner(Controller):
         # init uss
         self.uss_val = [False, False, False]
         self.uss = USS(tolerance=100)
-        # TODO - initialize USS
         
         # init motor
         self.motor = Motor()
