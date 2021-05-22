@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO
-import time
-import os
+import time, os
+import numpy as np
 
 # distance = elapsed * 34000 / 2  # distance of both directions so divide by 2
 #     print "Front Distance : %.1f" % distance
@@ -66,11 +66,24 @@ class USS():
         print("Left : " + str(distance))
         return distance, True if distance < self.tol else False
     
+    # function that gets the readings for the sensors
+    # outputs - (cd, rd, ld) - distance readings of the ultrasonic sensors
+    #         - (lb, cb, rb) - whether or not it is within the distance threshold 
     def get(self):
-        cd, cb = self.center()
-        rd, rb = self.right()
-        ld, lb = self.left()
-        return lb, cb, rb
+        ret_vals = ['left', 'straight', 'right']
+        distance, values = zip(*[self.left, self.center, self.right])
+        if all(v == False for v in values): # no objects in front of AMSAR
+            return 'none'
+        elif all(v == True for v in values): # all sensors detect something within threshold, stop boat, nowhere to go
+            return 'halt'
+        elif values[0] == values[2] and values[0] == True:
+            return 'halt'
+        elif values[1]:   # something in the center of the boat
+            return 'halt'
+        else:
+            pass
+            # do something else here
+        
     
     def quit(self):
         GPIO.cleanup()

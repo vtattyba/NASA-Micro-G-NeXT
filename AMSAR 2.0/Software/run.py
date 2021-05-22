@@ -33,10 +33,12 @@ class Runner(Controller):
     
     def autonomous(self):
         while not self.manual:
-            self.det_val = self.detector.get()
-            #self.uss_val = self.uss.get()
+            detection = self.detector.get()        # returns direction to turn 
+            uss_val = self.uss.get()               # returns direction to avoid
             
-            if self.
+            
+            
+            
             
             
         return
