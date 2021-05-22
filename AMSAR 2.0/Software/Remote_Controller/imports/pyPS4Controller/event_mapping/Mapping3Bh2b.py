@@ -1,4 +1,4 @@
-from pyPS4Controller.event_mapping.DefaultMapping import DefaultMapping
+from Remote_Controller.imports.pyPS4Controller.event_mapping.DefaultMapping import DefaultMapping
 
 
 class Mapping3Bh2b(DefaultMapping):

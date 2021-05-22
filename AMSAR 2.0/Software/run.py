@@ -1,6 +1,7 @@
 import _thread as thread
 import numpy as np
 
+from USS.tri_uss import USS
 from Object_Detection.object_detection import Detector
 from Motor_Controls.motor import Motor
 from Remote_Controller.controller import Controller
@@ -13,11 +14,13 @@ class Runner(Controller):
         Controller.__init__(self)
         
         # tensorflow initialization
-        self.obj = False
-        self.detector = Detector(use_TPU=False)
+        self.det_val = False
+        #self.detector = Detector(use_TPU=False)
+        self.detector = Detector(use_TPU=True)
         
         # init uss
-        self.uss = [False, False, False]
+        self.uss_val = [False, False, False]
+        self.uss = USS(tolerance=100)
         # TODO - initialize USS
         
         # init motor
@@ -26,17 +29,17 @@ class Runner(Controller):
         # init sdr
         # TODO - init sdr
         
-        self.loop()
-        
-    def autonomous(self):
-        while not self.manual:
-            self.obj = self.detector.check_tf()
-            print(self.obj)
-        return
-    
-    def loop(self):
         while True:
             self.listen_for_controller()
+    
+    def autonomous(self):
+        while not self.manual:
+            self.det_val = self.detector.get()
+            #self.uss_val = self.uss.get()
+            
+            if self.
+            
+            
         return
         
     # increase speed of motor 
@@ -71,7 +74,12 @@ class Runner(Controller):
         print('shutting down...')
         self.motor.stop()
         self.motor.quit()
-        exit(0)
+        
+        self.uss.quit()
+        self.detector.quit()
+        
+        exit(1)
+        return
     
     # change modes
     def on_share_press(self):
@@ -84,5 +92,3 @@ class Runner(Controller):
         return
 
 runner = Runner()
-
-runner.loop()

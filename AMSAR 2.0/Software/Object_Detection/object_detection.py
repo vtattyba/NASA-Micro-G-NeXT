@@ -67,7 +67,7 @@ class VideoStream:
         
         
 class Detector:
-    def __init__(self, use_TPU=True, model_name='Object_Detection/tflite1/Sample_TFLite_model'):
+    def __init__(self, use_TPU=True, model_name='Object_Detection/tflite/Sample_TFLite_model'):
         print('intializing tensorflow lite...')
         MODEL_NAME = model_name
         GRAPH_NAME = 'detect.tflite'
@@ -143,7 +143,7 @@ class Detector:
         self.videostream.stop()
         return 
 
-    def check_tf(self, show=False):
+    def get(self, show=False):
         imH = 480
         imW = 640
         # Grab frame from video stream
@@ -177,10 +177,10 @@ class Detector:
             ymax = int(min(imH,(boxes[0][2] * imH)))
             xmax = int(min(imW,(boxes[0][3] * imW)))
             if (xmin+xmax)//2 < (2*imW//5):
-                return 'L'
+                return 'left'
             elif (xmin+xmax)//2 >= (2*imW//5) and (xmin+xmax)//2 <= (3*imW//5):
-                return 'S'
+                return 'straight'
             elif (xmin+xmax)//2 > (3*imW//5):
-                return 'R'
-        return 'N'   # nothing detected in frame 
+                return 'right'
+        return 'none'   # nothing detected in frame 
 

@@ -18,8 +18,16 @@ class Motor():
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(13, GPIO.OUT)
+
         print('DONE.')
         return
+    
+    def set_speed(self, val):
+        self.speed = val
+        self.speed = min(1800, self.speed)
+        self.speed = max(1000, self.speed)
+        os.system('pigs s 5 ' + str(self.speed))
+        print('motor speed:', self.speed)    
     
     def increase_speed(self):
         self.speed += 100
@@ -37,7 +45,7 @@ class Motor():
     
     def turn_left(self):
         self.direction = -45
-        self.__servo__(0.1, 4.5)
+        self.__servo__(0.1, 7.5)
         print('LEFT')
         return
     
@@ -49,7 +57,7 @@ class Motor():
     
     def turn_right(self):
         self.direction = 45
-        self.__servo__(0.1, 7.5)
+        self.__servo__(0.1, 4.5)
         print('RIGHT')
         return
     

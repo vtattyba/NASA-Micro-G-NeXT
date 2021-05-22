@@ -1,11 +1,11 @@
 import os, struct, time
 import numpy as np
-
-from pyPS4Controller.event_mapping.Mapping3Bh2b import Mapping3Bh2b
+print(os.getcwd())
+from Remote_Controller.imports.pyPS4Controller.event_mapping.Mapping3Bh2b import Mapping3Bh2b
 
 
 class Controller():
-    def __init__(self):
+    def __init__(self, timeout=30):
         self.interface = '/dev/input/js0'
         self.event_format = '3Bh2b'
         self.event_definition = Mapping3Bh2b
@@ -13,9 +13,6 @@ class Controller():
         self.event_size = struct.calcsize(self.event_format)
         self.event_history = []
         
-        self.init_controller()
-        
-    def init_controller(self, timeout=30):
         print("Waiting for interface: {} to become available . . .".format(self.interface))
         for i in range(timeout):
             if os.path.exists(self.interface):
@@ -25,7 +22,6 @@ class Controller():
             time.sleep(1)
         print("Timeout({} sec). Interface not available.".format(timeout))
         exit(1)
-        return 
         
     def listen_for_controller(self):
         try:
@@ -58,7 +54,11 @@ class Controller():
     def on_right_arrow_press(self):
         print('RIGHT ARROW')
         return
-        
+    
+    def on_left_arrow_press(self):
+        print('LEFT ARROW')
+        return
+    
     def on_options_press(self):
         print('OPTIONS PRESS')
         return
