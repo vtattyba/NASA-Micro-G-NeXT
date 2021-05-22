@@ -1,3 +1,4 @@
+import sys
 import _thread as thread
 import numpy as np
 
@@ -8,7 +9,7 @@ from Remote_Controller.controller import Controller
 
 class Runner(Controller):
 
-    def __init__(self):
+    def __init__(self, args=None):
         # init controls for manual mode
         self.manual = True
         Controller.__init__(self)
@@ -16,7 +17,7 @@ class Runner(Controller):
         # tensorflow initialization
         self.det_val = False
         #self.detector = Detector(use_TPU=False)
-        self.detector = Detector(use_TPU=True)
+        self.detector = Detector(use_TPU= False if '--notpu' in args else True)
         
         # init uss
         self.uss_val = [False, False, False]
@@ -33,16 +34,28 @@ class Runner(Controller):
     
     def autonomous(self):
         while not self.manual:
-            detection = self.detector.get()        # returns direction to turn 
-            uss_val = self.uss.get()               # returns direction to avoid
+            detection = self.detector.get()        # returns direction to turn based on human detection
+            uss_val = self.uss.get()               # returns direction to turn based on USS 
             
-            
-            
-            
-            
-            
-        return
-        
+            if uss_val != 'continue':
+                if uss_val == 'left':
+                    self.motor.turn_left()
+                elif uss_val == 'right':
+                    self.motor.turn_right()
+                elif uss_val == 'halt':
+                    self.motor.halt()
+                else:
+                    self.motor.straight()
+            elif detection == uss_val or uss_val == 'continue':
+                if uss_val == 'left':
+                    self.motor.turn_left()
+                elif uss_val == 'right':
+                    self.motor.turn_right()
+                else:
+                    self.motor.turn_straight()
+            else:
+                pass
+
     # increase speed of motor 
     def on_up_arrow_press(self):
         if self.manual:
@@ -92,4 +105,4 @@ class Runner(Controller):
             thread.start_new_thread(self.autonomous, ())
         return
 
-runner = Runner()
+runner = Runner(args=sys.argv[1:] if sys.argv else None)

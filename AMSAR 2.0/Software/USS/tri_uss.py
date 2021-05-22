@@ -67,23 +67,21 @@ class USS():
         return distance, True if distance < self.tol else False
     
     # function that gets the readings for the sensors
-    # outputs - (cd, rd, ld) - distance readings of the ultrasonic sensors
-    #         - (lb, cb, rb) - whether or not it is within the distance threshold 
+    # outputs direction to turn OR to stop OR to continue with path (no objects at all)
     def get(self):
-        ret_vals = ['left', 'straight', 'right']
         distance, values = zip(*[self.left, self.center, self.right])
-        if all(v == False for v in values): # no objects in front of AMSAR
-            return 'none'
-        elif all(v == True for v in values): # all sensors detect something within threshold, stop boat, nowhere to go
+        if all(v == False for v in values):                # no objects in front of AMSAR
+            return 'continue'
+        elif all(v == True for v in values):               # all sensors detect something within threshold, stop boat, nowhere to go
             return 'halt'
-        elif values[0] == values[2] and values[0] == True:
+        elif values[0] == values[2] and values[0] == True: # two outer sensors detect something, stop for safety
             return 'halt'
-        elif values[1]:   # something in the center of the boat
+        elif values[1]:                                    # something in the center of the boat
             return 'halt'
-        else:
-            pass
-            # do something else here
-        
+        elif values[0]:                                    # something to the left, turn right
+            return 'right'
+        elif values[2]:                                    # something to the right, turn left
+            return 'left'
     
     def quit(self):
         GPIO.cleanup()
