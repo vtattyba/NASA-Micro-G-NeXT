@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO
 import time, os
 import numpy as np
+from collections import deque
 
 # distance = elapsed * 34000 / 2  # distance of both directions so divide by 2
 #     print "Front Distance : %.1f" % distance
@@ -31,6 +32,8 @@ class USS():
         self.ECHO_LEFT = 32
         GPIO.setup(self.TRIGGER_LEFT, GPIO.OUT)
         GPIO.setup(self.ECHO_LEFT, GPIO.IN)
+        
+        self.history = [deque(maxlen=5), deque(maxlen=5), deque(maxlen=5)]
         return
     
     # function that gets reading from sensor given trigger and echo values
@@ -40,8 +43,10 @@ class USS():
         GPIO.output(PIN_TRIGGER, GPIO.HIGH)
         time.sleep(0.00001)
         GPIO.output(PIN_TRIGGER, GPIO.LOW)
+        pulse_start_time = time.time()
         while GPIO.input(PIN_ECHO) == 0:
             pulse_start_time = time.time()
+        pulse_end_time = time.time()
         while GPIO.input(PIN_ECHO) == 1:
             pulse_end_time = time.time()
         pulse_duration = pulse_end_time - pulse_start_time
@@ -51,43 +56,42 @@ class USS():
     # check center USS
     def center(self):
         distance = self.get_distance(self.TRIGGER_CENTER, self.ECHO_CENTER)
-        print("Center : " + str(distance))
-        return distance, True if distance < self.tol else False
+        return distance
         
     # check right USS
     def right(self):
         distance = self.get_distance(self.TRIGGER_RIGHT, self.ECHO_RIGHT)
-        print("Right : " + str(distance))
-        return distance, True if distance < self.tol else False
+        return distance
     
     # check left USS
     def left(self):
         distance = self.get_distance(self.TRIGGER_LEFT, self.ECHO_LEFT)
-        print("Left : " + str(distance))
-        return distance, True if distance < self.tol else False
+        return distance
     
     # function that gets the readings for the sensors
     # outputs direction to turn OR to stop OR to continue with path (no objects at all)
     def get(self):
-        distance, values = zip(*[self.left, self.center, self.right])
-        if all(v == False for v in values):                # no objects in front of AMSAR
+        distances = [self.left(), self.center(), self.right()]   # raw values of whether or not the distance passes the threshold
+        thresh_values = [True if d < self.tol else False for d in distances]
+        for i, d in enumerate(thresh_values):
+            self.history[i].append(d)
+        print('L: %4.2f    |    C: %4.2f    |    R: %4.2f' % tuple(distances))
+        
+        values = [v.count(True) >= 3 for v in self.history]
+        if all(v == False for v in values):                   # no objects in front of AMSAR
             return 'continue'
-        elif all(v == True for v in values):               # all sensors detect something within threshold, stop boat, nowhere to go
-            return 'halt'
-        elif values[0] == values[2] and values[0] == True: # two outer sensors detect something, stop for safety
-            return 'halt'
-        elif values[1]:                                    # something in the center of the boat
+        elif values[1]:
             return 'halt'
         elif values[0]:                                    # something to the left, turn right
             return 'right'
         elif values[2]:                                    # something to the right, turn left
             return 'left'
-    
+        else:
+            print('ERROR?')
+        
     def quit(self):
         GPIO.cleanup()
         return
-
-  
 
 '''
 # Avoid obstacles and drive forward

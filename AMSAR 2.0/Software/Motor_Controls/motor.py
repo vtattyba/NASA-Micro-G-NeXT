@@ -5,7 +5,7 @@ class Motor():
     
     def __init__(self):
         self.speed = 1000
-        self.direction = 0
+        self.direction = 0 # can be 4.5, 6, 7.5, for left center right
         
         # for motor controls (speed)
         os.system('sudo killall pigpiod')
@@ -44,44 +44,46 @@ class Motor():
         return
     
     def turn_left(self):
-        self.direction = -45
-        self.__servo__(0.1, 7.5)
-        print('LEFT')
+        if self.direction != 7.5:
+            self.direction = 7.5
+            self.__upd_servo__()
+            print('LEFT')
         return
     
     def turn_straight(self):
-        self.direction = 0
-        self.__servo__(0.1, 6)
-        print('STRAIGHT')
+        if self.direction != 6:
+            self.direction = 6
+            self.__upd_servo__()
+            print('STRAIGHT')
         return
     
     def turn_right(self):
-        self.direction = 45
-        self.__servo__(0.1, 4.5)
-        print('RIGHT')
+        if self.direction != 4.5:
+            self.direction = 4.5
+            self.__upd_servo__()
+            print('RIGHT')
         return
     
     def stop(self):
         os.system('pigs s 5 1000')
-        self.__servo__(0.1, 6)
+        if self.direction != 6:
+            self.direction = 6
+            self.__upd_servo__()
         print('HALTED.')
         return
     
     def quit(self):
-        os.system('pigs s 5 1000')
+        self.stop()
         os.system('pigs s 5 0')
         os.system('sudo killall pigpiod')
-        
-        self.__servo__(0.1, 6)
         GPIO.cleanup()
-        
         print('EXITING SYSTEM.')
         return
     
-    def __servo__(self, sleep, cycle):
+    def __upd_servo__(self):
         p = GPIO.PWM(13, 50)
         p.start(0)
-        p.ChangeDutyCycle(cycle)
-        time.sleep(sleep)
+        p.ChangeDutyCycle(self.direction)
+        time.sleep(0.1)
         p.stop()
         return
