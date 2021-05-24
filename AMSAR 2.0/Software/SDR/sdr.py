@@ -13,7 +13,7 @@ class SDR():
         self.browser = webdriver.Chrome()
         self.browser.get(url)
         self.browser.implicitly_wait(30)
-        time.sleep(5)
+        time.sleep(10)
         return
     
     # function that gets data from the SDR and returns a direction 
