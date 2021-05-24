@@ -1,6 +1,5 @@
 import os, struct, time
 import numpy as np
-print(os.getcwd())
 from Remote_Controller.imports.pyPS4Controller.event_mapping.Mapping3Bh2b import Mapping3Bh2b
 
 

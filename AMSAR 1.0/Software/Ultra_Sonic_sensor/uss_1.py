@@ -6,8 +6,8 @@ count = 0
 tg = True
 distance = 0
 GPIO.setmode(GPIO.BOARD)
-PIN_TRIGGER = 33
-PIN_ECHO = 35
+PIN_TRIGGER = 40
+PIN_ECHO = 32
 GPIO.setup(PIN_TRIGGER, GPIO.OUT)
 GPIO.setup(PIN_ECHO, GPIO.IN)
 try:

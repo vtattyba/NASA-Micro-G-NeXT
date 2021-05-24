@@ -1,4 +1,4 @@
-import sys, time
+import sys, time, subprocess
 import _thread as thread
 import numpy as np
 
@@ -11,9 +11,13 @@ from Remote_Controller.controller import Controller
 class Runner(Controller):
 
     def __init__(self, args=None):
-        # init controls for manual mode
         self.manual = True
-        Controller.__init__(self)
+        
+        # init motor
+        self.motor = Motor()
+        self.motor.turn_left()
+        time.sleep(1)
+        self.motor.turn_straight()
         
         # tensorflow initialization
         self.detection = 'none'
@@ -21,35 +25,49 @@ class Runner(Controller):
         self.detector = Detector(use_TPU= False if '--notpu' in args else True)
         
         # init uss
-        self.uss_val = 'none'
+        self.uss_val = 'continue'
         self.uss = USS(tolerance=100)
         
-        # init motor
-        self.motor = Motor()
-        
         # init sdr
-        self.sdr = SDR()
+        self.sdr = SDR(temp=False, min_confidence=30)
+        
+        while 'ACL' not in str(subprocess.check_output(['hcitool', 'con'])):
+            print('waiting...')
+        print('CONNECTED.')
+        start = time.time()
+        while abs(start - time.time()) < 5:
+            pass
+        
+        # init controls for manual mode
+        Controller.__init__(self)
+        
+        self.motor.turn_left()
+        time.sleep(1)
+        self.motor.turn_straight()
         
         while True:
             self.listen_for_controller()
     
-    def fetch_detector_values(self):
-        while not self.manual:
-            self.detection = self.detector.get()
-        return
-    
-    def fetch_uss_values(self):
-        while not self.manual:
-            self.uss_val = self.uss.get()
-        return
-    
-    def start_sensors(self):
-        thread.start_new_thread(self.fetch_detector_values, ())        # start to fetch values from detector
-        thread.start_new_thread(self.fetch_uss_values, ())             # start to fetch values from ultrasonic sensors
-        return 
-    
+    # function that runs when autonomous mode is activated 
     def autonomous(self):
-        #self.start_sensors()
+        # function that operates the motor/servo based on a string command
+        def turn_based_on_str(string):
+            if string == 'straight':
+                self.motor.turn_straight()
+                self.motor.set_speed(1800)
+            elif string == 'left':
+                self.motor.turn_left()
+                self.motor.set_speed(1300)
+            elif string == 'right':
+                self.motor.turn_right()
+                self.motor.set_speed(1300)
+            elif string == 'halt': 
+                self.motor.stop()
+            else: # assume halt?
+                self.motor.stop()
+            return
+        
+        last_sdr_update = float('inf')
         while not self.manual:
             self.uss_val = self.uss.get()
             self.detection = self.detector.get()
@@ -59,33 +77,20 @@ class Runner(Controller):
                 self.quit()
             elif self.uss_val == 'continue':   # no objects in the way from all the sensors
                 if self.detection == 'none':
-                    self.motor.stop()
-                    sdr_val = self.sdr.get(temp=True)
-                    self.turn_based_str(sdr_val)
+                    if abs(last_sdr_update - time.time()) > 3:
+                        self.motor.stop()
+                        sdr_val = self.sdr.get()
+                        turn_based_on_str(sdr_val)
+                        last_sdr_update = time.time()
+                        
                 else:
-                    self.turn_based_on_str(self.detection)
+                    turn_based_on_str(self.detection)
             else:
-                self.turn_based_on_str(self.uss_val)
-        return 
-                
-                
-    def turn_based_on_str(self, string):
-        if string == 'straight':
-            self.motor.turn_straight()
-            self.motor.set_speed(1800)
-        elif string == 'left':
-            self.motor.turn_left()
-            self.motor.set_speed(1300)
-        elif string == 'right':
-            self.motor.turn_right()
-            self.motor.set_speed(1300)
-        elif string == 'halt': 
-            self.motor.stop()
-        else: # assume halt?
-            self.motor.stop()
-        return
+                turn_based_on_str(self.uss_val)
             
-        
+        return     
+    
+    # function that exits the entire program 
     def quit(self):
         return self.on_options_press()
     
