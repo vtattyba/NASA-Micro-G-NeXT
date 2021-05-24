@@ -28,6 +28,8 @@ class Runner(Controller):
         # init sdr
         self.sdr = SDR(temp=False, min_confidence=30)
         
+        self.motor.wiggle()
+        
         # init controls for manual mode
         Controller.__init__(self)
         
@@ -81,6 +83,10 @@ class Runner(Controller):
     # function that exits the entire program 
     def quit(self):
         return self.on_options_press()
+    
+    def on_x_press(self):
+        self.motor.stop()
+        return
     
     # increase speed of motor 
     def on_up_arrow_press(self):

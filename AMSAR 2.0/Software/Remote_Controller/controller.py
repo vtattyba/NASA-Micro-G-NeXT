@@ -44,7 +44,9 @@ class Controller():
                             debug=False)
 
         return
-       
+    
+    def on_x_press(self):
+        print('X PRESS')
     
     def on_up_arrow_press(self):
         print('UP ARROW')

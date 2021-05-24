@@ -1,21 +1,29 @@
 import pyautogui as mouse
 import webbrowser
 from selenium import webdriver
+import selenium
 import time
 
-# this class is used to define the SDR module for retrieving the sensor readings. 
+# this class idule for retrieving the sensor readings. 
 # it's to be used on the main pi. 
 class SDR():
     def __init__(self, temp=True, min_confidence=30):
         self.temp = temp
         self.min_confidence = min_confidence
         
+        self.browser = webdriver.Chrome()
         print('initializing sdr..')
         url = 'http://192.168.4.1:8081/compass.html'
-        self.browser = webdriver.Chrome()
+        
+        loaded = False
         self.browser.get(url)
-        self.browser.implicitly_wait(30)
-        time.sleep(10)
+        while not loaded:
+            try:
+                degree = int(self.browser.find_element_by_id('doa').text.split()[2])
+                loaded = True
+            except selenium.common.exceptions.NoSuchElementException:
+                loaded = False
+        print('sdr ready')
         return
     
     # function that gets data from the SDR and returns a direction 
