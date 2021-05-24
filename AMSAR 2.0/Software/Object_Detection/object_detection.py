@@ -65,7 +65,7 @@ class VideoStream:
         self.stopped = True
         
         
-        
+   
 class Detector:
     def __init__(self, use_TPU=True, model_name='Object_Detection/tflite/Sample_TFLite_model'):
         print('intializing tensorflow lite...')
