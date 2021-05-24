@@ -1,10 +1,16 @@
-import os, struct, time
+import os, struct, time, subprocess
 import numpy as np
 from Remote_Controller.imports.pyPS4Controller.event_mapping.Mapping3Bh2b import Mapping3Bh2b
 
-
 class Controller():
     def __init__(self, timeout=30):
+        while 'ACL' not in str(subprocess.check_output(['hcitool', 'con'])):
+            print('waiting...')
+        print('CONNECTED.')
+        start = time.time()
+        while abs(start - time.time()) < 5:
+            pass
+    
         self.interface = '/dev/input/js0'
         self.event_format = '3Bh2b'
         self.event_definition = Mapping3Bh2b
@@ -21,7 +27,9 @@ class Controller():
             time.sleep(1)
         print("Timeout({} sec). Interface not available.".format(timeout))
         exit(1)
-        
+        return 
+    
+    # function that listens for controller input ONE time
     def listen_for_controller(self):
         try:
             if self._file.readable():
@@ -65,11 +73,9 @@ class Controller():
     def on_share_press(self):
         print('SHARE PRESS')
         return
-   
     
     
     def __handle_event(self, button_id, button_type, value, overflow, debug):
-
         event = self.event_definition(button_id=button_id,
                                       button_type=button_type,
                                       value=value,

@@ -3,6 +3,8 @@ import webbrowser
 from selenium import webdriver
 import time
 
+# this class is used to define the SDR module for retrieving the sensor readings. 
+# it's to be used on the main pi. 
 class SDR():
     def __init__(self, temp=True, min_confidence=30):
         self.temp = temp
@@ -17,6 +19,8 @@ class SDR():
         return
     
     # function that gets data from the SDR and returns a direction 
+    # inputs - None
+    # outputs - direction suggested by sensor
     def get(self):
         if self.temp:
             return 'straight'
@@ -37,3 +41,7 @@ class SDR():
             return 'right'
         else:
             return 'straight'
+            
+    # function that quits the SDR session    
+    def quit(self):
+        return self.browser.quit()

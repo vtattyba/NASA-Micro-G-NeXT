@@ -9,8 +9,8 @@ from collections import deque
 #     return distance
 
 
-class USS():
-    
+# class to define the USS module for initializing and retrieving sensors data. 
+class USS():    
     def __init__(self, tolerance=100):
         self.tol = tolerance
         GPIO.setmode(GPIO.BOARD)
@@ -37,6 +37,9 @@ class USS():
         return
     
     # function that gets reading from sensor given trigger and echo values
+    # inputs - PIN_TRIGGER - 
+    #        - PIN_ECHO - 
+    # outputs - distance from sensor to closest object detected by a sensor
     def get_distance(self, PIN_TRIGGER, PIN_ECHO):
         GPIO.output(PIN_TRIGGER, GPIO.LOW)
         time.sleep(0.1)
@@ -75,16 +78,15 @@ class USS():
         thresh_values = [True if d < self.tol else False for d in distances]
         for i, d in enumerate(thresh_values):
             self.history[i].append(d)
-        print('L: %4.2f    |    C: %4.2f    |    R: %4.2f' % tuple(distances))
-        
+        #print('L: %4.2f    |    C: %4.2f    |    R: %4.2f' % tuple(distances))
         values = [v.count(True) >= 3 for v in self.history]
-        if all(v == False for v in values):                   # no objects in front of AMSAR
+        if all(v == False for v in values):                 # no objects in front of AMSAR
             return 'continue'
-        elif values[1]:
+        elif values[1]:                                     # object directly in front of AMSAR
             return 'halt'
-        elif values[0]:                                    # something to the left, turn right
+        elif values[0]:                                     # something to the left, turn right
             return 'right'
-        elif values[2]:                                    # something to the right, turn left
+        elif values[2]:                                     # something to the right, turn left
             return 'left'
         else:
             print('ERROR?')

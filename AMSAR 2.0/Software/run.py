@@ -1,4 +1,4 @@
-import sys, time, subprocess
+import sys, time
 import _thread as thread
 import numpy as np
 
@@ -15,13 +15,10 @@ class Runner(Controller):
         
         # init motor
         self.motor = Motor()
-        self.motor.turn_left()
-        time.sleep(1)
-        self.motor.turn_straight()
+        self.motor.wiggle()
         
         # tensorflow initialization
         self.detection = 'none'
-        #self.detector = Detector(use_TPU=False)
         self.detector = Detector(use_TPU= False if '--notpu' in args else True)
         
         # init uss
@@ -31,22 +28,13 @@ class Runner(Controller):
         # init sdr
         self.sdr = SDR(temp=False, min_confidence=30)
         
-        while 'ACL' not in str(subprocess.check_output(['hcitool', 'con'])):
-            print('waiting...')
-        print('CONNECTED.')
-        start = time.time()
-        while abs(start - time.time()) < 5:
-            pass
-        
         # init controls for manual mode
         Controller.__init__(self)
         
-        self.motor.turn_left()
-        time.sleep(1)
-        self.motor.turn_straight()
-        
+        self.motor.wiggle()
         while True:
             self.listen_for_controller()
+        return
     
     # function that runs when autonomous mode is activated 
     def autonomous(self):
@@ -54,13 +42,13 @@ class Runner(Controller):
         def turn_based_on_str(string):
             if string == 'straight':
                 self.motor.turn_straight()
-                self.motor.set_speed(1800)
+                self.motor.set_speed(1700)
             elif string == 'left':
                 self.motor.turn_left()
                 self.motor.set_speed(1300)
             elif string == 'right':
                 self.motor.turn_right()
-                self.motor.set_speed(1300)
+                self.motor.set_speed(1700)
             elif string == 'halt': 
                 self.motor.stop()
             else: # assume halt?
