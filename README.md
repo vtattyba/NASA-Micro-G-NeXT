@@ -20,7 +20,7 @@ Orion as the spacecraft. In the event of an unplanned egress (launch abort, cont
 AMSAR is a fully autonomous system that must undergo multiple mission procedures in order to
 attain its goal state. Figure 4 [pp. 3] shows the System Block Diagram which defines the exact actions and states within the AMSAR system. The sensors required for mission success include the accelerometer, Kerberos SDR, motor software, TensorFlow object detection, and ultrasonic proximity detection/object avoidance.
 
-<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/AMSAR%202.0/Software/software.png" width="400" height="500">
+<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/AMSAR%202.0/Software/software.png" width="470" height="500">
 
 ##### Plugins
 
@@ -51,7 +51,7 @@ pip install selenium
 ## Electronics
 Main power connections are represented by solid lines, while dashed lines show connections that include data transfer. It can be assumed that all components listed in a specific sub-circuit are connected in series (with the exception of the dependent Pi_1 components).
 
-<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/AMSAR%202.0/Electronics/Circuit-2.png" width="400" height="350">
+<img src="https://github.com/vtattyba/University-at-Buffalo-Micro-g-NExT-Team-/blob/master/AMSAR%202.0/Electronics/Circuit.png " width="550" height="350">
 
 # TEAM
 
